@@ -16,7 +16,6 @@ const mapStateToProps = (state) => {
 
 class Login extends React.Component {
   componentDidMount(){
-    console.log(FBLoginManager);
   }
   checkUser(fbInfo, fbAuthData) {
     const props = { ...this.props };
@@ -24,13 +23,17 @@ class Login extends React.Component {
       if (error) {
         console.log('Login Failed!', error);
       } else {
+        // Creating a new user
         const newRef = ref.child('userData').push();
+        // Obtaining user new key
         const key = newRef.key();
+        // Saving user data
         newRef.set({
           fbAuthData,
           fbInfo,
           authData,
         }).then(()=>{
+          // logging in user locally
           props.logIn({
             fbAuthData,
             fbInfo,
@@ -44,6 +47,7 @@ class Login extends React.Component {
   }
   render() {
     const _this = this;
+    const props = { ...this.props };
     return (
       <FBLogin
           loginBehavior={FBLoginManager.LoginBehaviors.Web}
@@ -64,17 +68,20 @@ class Login extends React.Component {
               .catch(error => console.log(error));
           }}
           onLoginFound={function(data){
-            console.log('Existing login found.')
-            console.log(data)
-            _this.setState({ user : data.credentials })
+            _this.setState({ user : data.credentials, fbLoading: true });
+            fetch(`https://graph.facebook.com/me?access_token=${data.credentials.token}`)
+              .then(response => response.json())
+              .then(json => _this.checkUser(json, data))
+              .catch(error => console.log(error));
           }}
           onLoginNotFound={function(){
             console.log('No user logged in.')
+            props.logOut();
             _this.setState({ user : null })
           }}
           onLogout={function(){
             console.log('Logged out.')
-            _this.setState({ user : null })
+            props.logOut();
           }}
           onPermissionsMissing={function(data){
             console.log('Check permissions!')
