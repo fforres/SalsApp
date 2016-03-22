@@ -3,18 +3,42 @@ import FBLogin from 'react-native-facebook-login';
 import { FBLoginManager } from 'NativeModules';
 import ref from '../../FireBase';
 
+import { connect } from 'react-redux';
+import { actions as accountActions } from '../../Redux/modules/account';
+
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    loggedIn: state.account.loggedIn,
+    userData: state.account.userData,
+  };
+};
+
 class Login extends React.Component {
   componentDidMount(){
     console.log(FBLoginManager);
   }
-  checkUser(fbInfo, authData) {
-    const context = this;
-    context.setState({fbAuthData: authData, fbInfo});
-    ref.authWithOAuthToken('facebook', authData.credentials.token, function(error, authData) {
+  checkUser(fbInfo, fbAuthData) {
+    const props = { ...this.props };
+    ref.authWithOAuthToken('facebook', fbAuthData.credentials.token, function(error, authData) {
       if (error) {
         console.log('Login Failed!', error);
       } else {
-        console.log('Authenticated successfully with payload:', authData);
+        const newRef = ref.child('userData').push();
+        const key = newRef.key();
+        newRef.set({
+          fbAuthData,
+          fbInfo,
+          authData,
+        }).then(()=>{
+          props.logIn({
+            fbAuthData,
+            fbInfo,
+            authData,
+            Id:key,
+          });
+        })
+        console.log('Authenticated in FireBase successfully with payload:', authData);
       }
     });
   }
@@ -63,4 +87,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login
+export default connect(mapStateToProps, accountActions)(Login)

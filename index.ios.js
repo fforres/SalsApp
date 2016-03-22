@@ -4,6 +4,9 @@
  */
 import React, { AppRegistry, Navigator } from 'react-native';
 import Splash from './components/Splash';
+import configureStore from './components/Redux/configureStore';
+const __DEBUG__ = false;
+const store = configureStore({}, __DEBUG__);
 
 class SalsApp extends React.Component {
   _renderScene(route, navigator) {
@@ -13,6 +16,7 @@ class SalsApp extends React.Component {
           {...route.props}
           navigator={navigator}
           route={route}
+          store={store}
       />
     )
   }
