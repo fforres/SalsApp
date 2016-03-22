@@ -3,10 +3,9 @@
  * https://github.com/jhabdas/react-native-webpack-starter-kit
  */
 import React, { PropTypes } from 'react-native';
-import Home from '../Home';
+import Facebook from '../../components/Auth/Facebook';
 import { connect } from 'react-redux';
 import { actions as accountActions } from '../../components/Redux/modules/account';
-import { actions as sideBarActions } from '../../components/Redux/modules/sidebar';
 const {
   StyleSheet,
   Text,
@@ -18,7 +17,6 @@ const mapStateToProps = (state) => {
   return {
     loggedIn: state.account.loggedIn,
     userData: state.account.userData,
-    isSideBarOpen: state.sidebar.isOpen,
   };
 };
 
@@ -26,16 +24,11 @@ class Splash extends React.Component {
   static propTypes = {
     isSideBarOpen: PropTypes.bool.isRequired,
     loggedIn: PropTypes.bool.isRequired,
+    store: PropTypes.object.isRequired,
   };
-  componentDidMount(){
-    this.checkLogged(this.props.loggedIn);
-  }
-  checkLogged(status){
-    console.log(status);
-    console.log(status);
-    console.log(status);
-  }
+  componentDidMount(){}
   render(){
+    // TODO: Change for a middle-splash-screen that on componentDidMount checks for x, y, or z and shows login or application.
     return (
       <View style={styles.container}>
         <Image
@@ -44,11 +37,12 @@ class Splash extends React.Component {
         >
           <View style={styles.imagesContainer}>
             <Text style={styles.welcome}>
-              SalsApp!
+              SalsApp
             </Text>
             <Text style={styles.instructions}>
-              Loading!...
+              lorem ipsum dolor sit PARTY!
             </Text>
+            <Facebook store={this.props.store} />
           </View>
         </Image>
       </View>
@@ -94,5 +88,4 @@ let styles = StyleSheet.create({
   },
 })
 
-export default
-connect(mapStateToProps, accountActions)(connect(mapStateToProps, sideBarActions)(Splash))
+export default connect(mapStateToProps, accountActions)(Splash);
