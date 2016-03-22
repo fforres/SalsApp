@@ -5,7 +5,7 @@
 import React, { AppRegistry, Navigator } from 'react-native';
 import Splash from './views/Splash';
 import configureStore from './components/Redux/configureStore';
-const __DEBUG__ = false;
+const __DEBUG__ = true;
 const store = configureStore({}, __DEBUG__);
 
 class SalsApp extends React.Component {
