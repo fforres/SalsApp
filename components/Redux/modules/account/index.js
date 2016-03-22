@@ -24,14 +24,9 @@ const initialState = {
 };
 export default createReducer(initialState, {
   [LOG_OUT]  () {
-    console.log(initialState);
-    debugger;
     return initialState;
   },
   [LOG_IN] (state, payload = null) {
-    // deepFreeze(state);
-    console.log(payload);
-    debugger;
     if (payload !== null) {
       return { ...state, loggedIn: true, userData: { ...payload } };
     }
