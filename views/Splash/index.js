@@ -3,10 +3,10 @@
  * https://github.com/jhabdas/react-native-webpack-starter-kit
  */
 import React, { PropTypes } from 'react-native';
-import Facebook from '../Auth/Facebook';
+import Facebook from '../../components/Auth/Facebook';
 import Home from '../Home';
 import { connect } from 'react-redux';
-import { actions as accountActions } from '../Redux/modules/account';
+import { actions as accountActions } from '../../components/Redux/modules/account';
 const {
   StyleSheet,
   Text,
@@ -30,33 +30,24 @@ class Splash extends React.Component {
   render(){
     const { loggedIn } = this.props;
     // TODO: Change for a middle-splash-screen that on componentDidMount checks for x, y, or z and shows login or application.
-    if (!loggedIn) {
-      return (
-        <Home
-            locales={[{name:'a'},{name:'b'}]}
-            store={this.props.store}
-        />
-      )
-    } else {
-      return (
-        <View style={styles.container}>
-          <Image
-              source={require('../../Images/background3.jpg')}
-              style={styles.backgroundImage}
-          >
-            <View style={styles.imagesContainer}>
-              <Text style={styles.welcome}>
-                SalsApp
-              </Text>
-              <Text style={styles.instructions}>
-                lorem ipsum dolor sit PARTY!
-              </Text>
-              <Facebook store={this.props.store} />
-            </View>
-          </Image>
-        </View>
-      )
-    }
+    return (
+      <View style={styles.container}>
+        <Image
+            source={require('../../Images/background3.jpg')}
+            style={styles.backgroundImage}
+        >
+          <View style={styles.imagesContainer}>
+            <Text style={styles.welcome}>
+              SalsApp
+            </Text>
+            <Text style={styles.instructions}>
+              lorem ipsum dolor sit PARTY!
+            </Text>
+            <Facebook store={this.props.store} />
+          </View>
+        </Image>
+      </View>
+    )
   }
 }
 
