@@ -5,7 +5,6 @@ class Home extends Component {
     name: PropTypes.string.isRequired,
   };
   componentWillMount() {
-    console.log(this.props)
   }
   render(){
     return (
