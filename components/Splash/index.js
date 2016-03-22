@@ -4,6 +4,8 @@
  */
 import React, { PropTypes } from 'react-native';
 import Facebook from '../Auth/Facebook';
+import { connect } from 'react-redux';
+import { actions as accountActions } from '../Redux/modules/account';
 const {
   StyleSheet,
   Text,
@@ -11,23 +13,42 @@ const {
   Image,
 } = React;
 
-const Splash = () =>
-  <View style={styles.container}>
-    <Image
-        source={require('../../Images/background3.jpg')}
-        style={styles.backgroundImage}
-    >
-      <View style={styles.imagesContainer}>
-        <Text style={styles.welcome}>
-          SalsApp
-        </Text>
-        <Text style={styles.instructions}>
-          lorem ipsum dolor sit PARTY!
-        </Text>
-        <Facebook/>
+const mapStateToProps = (state) => {
+  return {
+    loggedIn: state.account.loggedIn,
+    userData: state.account.userData,
+  };
+};
+
+class Splash extends React.Component {
+  static propTypes = {
+    store: PropTypes.object.isRequired,
+  };
+
+  componentDidMount(){
+    console.log(this.props);
+  }
+  render(){
+    return (
+      <View style={styles.container}>
+        <Image
+            source={require('../../Images/background3.jpg')}
+            style={styles.backgroundImage}
+        >
+          <View style={styles.imagesContainer}>
+            <Text style={styles.welcome}>
+              SalsApp
+            </Text>
+            <Text style={styles.instructions}>
+              lorem ipsum dolor sit PARTY!
+            </Text>
+            <Facebook store={this.props.store} />
+          </View>
+        </Image>
       </View>
-    </Image>
-  </View>
+    )
+  }
+}
 
 Splash.propTypes = {
   instructions: PropTypes.string,
@@ -67,4 +88,4 @@ let styles = StyleSheet.create({
   },
 })
 
-export default Splash
+export default connect(mapStateToProps, accountActions)(Splash)
