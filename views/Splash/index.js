@@ -3,8 +3,8 @@
  * https://github.com/jhabdas/react-native-webpack-starter-kit
  */
 import React, { PropTypes } from 'react-native';
-import Home from '../Home';
 import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux'
 import { actions as accountActions } from '../../components/Redux/modules/account';
 import { actions as sideBarActions } from '../../components/Redux/modules/sidebar';
 const {
@@ -31,9 +31,11 @@ class Splash extends React.Component {
     this.checkLogged(this.props.loggedIn);
   }
   checkLogged(status){
-    console.log(status);
-    console.log(status);
-    console.log(status);
+    if (status) {
+      Actions.home();
+    } else {
+      Actions.login();
+    }
   }
   render(){
     return (
