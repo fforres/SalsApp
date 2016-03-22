@@ -29,25 +29,35 @@ class Splash extends React.Component {
   componentDidMount(){}
   render(){
     const { loggedIn } = this.props;
+    console.log(loggedIn)
     // TODO: Change for a middle-splash-screen that on componentDidMount checks for x, y, or z and shows login or application.
-    return (
-      <View style={styles.container}>
-        <Image
-            source={require('../../Images/background3.jpg')}
-            style={styles.backgroundImage}
-        >
-          <View style={styles.imagesContainer}>
-            <Text style={styles.welcome}>
-              SalsApp
-            </Text>
-            <Text style={styles.instructions}>
-              lorem ipsum dolor sit PARTY!
-            </Text>
-            <Facebook store={this.props.store} />
-          </View>
-        </Image>
-      </View>
-    )
+    if (loggedIn) {
+      return (
+        <Home
+            {...this.props}
+            locales={[{name:'2'},{name:'3'},{name:'34'}]}
+        />
+      )
+    } else {
+      return (
+        <View style={styles.container}>
+          <Image
+              source={require('../../Images/background3.jpg')}
+              style={styles.backgroundImage}
+          >
+            <View style={styles.imagesContainer}>
+              <Text style={styles.welcome}>
+                SalsApp
+              </Text>
+              <Text style={styles.instructions}>
+                lorem ipsum dolor sit PARTY!
+              </Text>
+              <Facebook store={this.props.store} />
+            </View>
+          </Image>
+        </View>
+      )
+    }
   }
 }
 
