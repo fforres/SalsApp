@@ -3,7 +3,7 @@
  * https://github.com/jhabdas/react-native-webpack-starter-kit
  */
 import React, { AppRegistry, Navigator } from 'react-native';
-import Splash from './components/Splash';
+import Splash from './views/Splash';
 import configureStore from './components/Redux/configureStore';
 const __DEBUG__ = false;
 const store = configureStore({}, __DEBUG__);

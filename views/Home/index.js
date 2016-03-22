@@ -1,8 +1,8 @@
 import React, { Component, StyleSheet, PropTypes, View, ListView, Text } from 'react-native';
 import { connect } from 'react-redux';
-import { actions as accountActions } from '../Redux/modules/account';
-
-const mapStateToProps = (state) => {
+import { actions as accountActions } from '../../components/Redux/modules/account';
+import VenueCard from '../../components/Venue/Card';
+const mapStateToProps = () => {
   return {};
 }
 
@@ -18,9 +18,9 @@ class Home extends Component {
   }
   _renderRow(data) {
     return (
-      <View>
-        <Text>{data.name}</Text>
-      </View>
+      <VenueCard
+          {...data}
+      />
     );
   }
   render(){
@@ -38,10 +38,18 @@ class Home extends Component {
 
 let styles = StyleSheet.create({
   container: {
+    marginTop:30,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  card: {
+    flex: 1,
+    margin: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'red',
   },
 })
 
