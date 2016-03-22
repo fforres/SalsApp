@@ -26,6 +26,7 @@
     "prefer-template": 1,
     "require-yield": 2,
     "jsx-quotes": 1,
+    "no-alert": 0,
     "react/forbid-prop-types": 1,
     "react/jsx-boolean-value": 1,
     "react/jsx-closing-bracket-location": 1,
@@ -55,5 +56,7 @@
     "react/wrap-multilines": 1
   },
   "extends": "eslint:recommended",
-  "globals": ['fetch']
+  "globals": {
+    "fetch":true
+  }
 }

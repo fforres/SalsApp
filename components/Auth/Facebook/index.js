@@ -11,40 +11,18 @@ class Login extends React.Component {
     const context = this;
     context.setState({fbAuthData: authData, fbInfo});
     ref.authWithOAuthToken('facebook', authData.credentials.token, function(error, authData) {
-      debugger;
       if (error) {
         console.log('Login Failed!', error);
       } else {
         console.log('Authenticated successfully with payload:', authData);
       }
     });
-
-    /*
-    const query = new Parse.Query(Parse.User);
-    query.equalTo('username', fbInfo.email);
-    query.find({
-      success: function(user) {
-        if(user.length > 0) {
-          if(!Parse.FacebookUtils.isLinked(user[0])) {
-            context.setState({fbLoading: false});
-            Alert.displayIOS('Hey!', 'There is already an account with your ' +
-            'same email address. Please login using your credentials to link them.', false);
-          } else {
-            context.fbLogin(false);
-          }
-        } else {
-          context.fbLogin(true);
-        }
-      }
-    });
-    */
-
   }
   render() {
     const _this = this;
     return (
       <FBLogin
-          loginBehavior={FBLoginManager.LoginBehaviors.SystemAccount}
+          loginBehavior={FBLoginManager.LoginBehaviors.Web}
           onCancel={function(){
             console.log('User cancelled.')
           }}
@@ -56,7 +34,7 @@ class Login extends React.Component {
             console.log('Logged in!')
             console.log(data)
             _this.setState({ user : data.credentials, fbLoading: true });
-            fetch('https://graph.facebook.com/me?access_token=' + data.credentials.token)
+            fetch(`https://graph.facebook.com/me?access_token=${data.credentials.token}`)
               .then(response => response.json())
               .then(json => _this.checkUser(json, data))
               .catch(error => console.log(error));
