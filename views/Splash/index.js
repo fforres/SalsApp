@@ -3,9 +3,10 @@
  * https://github.com/jhabdas/react-native-webpack-starter-kit
  */
 import React, { PropTypes } from 'react-native';
-import Facebook from '../Auth/Facebook';
+import Facebook from '../../components/Auth/Facebook';
+import Home from '../Home';
 import { connect } from 'react-redux';
-import { actions as accountActions } from '../Redux/modules/account';
+import { actions as accountActions } from '../../components/Redux/modules/account';
 const {
   StyleSheet,
   Text,
@@ -13,22 +14,22 @@ const {
   Image,
 } = React;
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({account}) => {
   return {
-    loggedIn: state.account.loggedIn,
-    userData: state.account.userData,
+    loggedIn: account.loggedIn,
+    userData: account.userData,
   };
 };
 
 class Splash extends React.Component {
   static propTypes = {
+    loggedIn: PropTypes.bool.isRequired,
     store: PropTypes.object.isRequired,
   };
-
-  componentDidMount(){
-    console.log(this.props);
-  }
+  componentDidMount(){}
   render(){
+    const { loggedIn } = this.props;
+    // TODO: Change for a middle-splash-screen that on componentDidMount checks for x, y, or z and shows login or application.
     return (
       <View style={styles.container}>
         <Image
