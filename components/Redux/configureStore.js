@@ -16,10 +16,9 @@ export default function configureStore (initialState, __DEBUG__) {
   const store = createStoreWithMiddleware(createStore)(
     rootReducer, initialState
   );
-  if (__DEBUG__) {
-    console.log(true);
+  if(__DEBUG__){
+    console.log('Is Debug');
   }
-  console.log(module);
   if (module.hot) {
     module.hot.accept('./modules', () => {
       const nextRootReducer = require('./modules').default;

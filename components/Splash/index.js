@@ -4,6 +4,7 @@
  */
 import React, { PropTypes } from 'react-native';
 import Facebook from '../Auth/Facebook';
+import Home from '../Home';
 import { connect } from 'react-redux';
 import { actions as accountActions } from '../Redux/modules/account';
 const {
@@ -13,40 +14,49 @@ const {
   Image,
 } = React;
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({account}) => {
   return {
-    loggedIn: state.account.loggedIn,
-    userData: state.account.userData,
+    loggedIn: account.loggedIn,
+    userData: account.userData,
   };
 };
 
 class Splash extends React.Component {
   static propTypes = {
+    loggedIn: PropTypes.bool.isRequired,
     store: PropTypes.object.isRequired,
   };
-
-  componentDidMount(){
-    console.log(this.props);
-  }
+  componentDidMount(){}
   render(){
-    return (
-      <View style={styles.container}>
-        <Image
-            source={require('../../Images/background3.jpg')}
-            style={styles.backgroundImage}
-        >
-          <View style={styles.imagesContainer}>
-            <Text style={styles.welcome}>
-              SalsApp
-            </Text>
-            <Text style={styles.instructions}>
-              lorem ipsum dolor sit PARTY!
-            </Text>
-            <Facebook store={this.props.store} />
-          </View>
-        </Image>
-      </View>
-    )
+    const { loggedIn } = this.props;
+    // TODO: Change for a middle-splash-screen that on componentDidMount checks for x, y, or z and shows login or application.
+    if (!loggedIn) {
+      return (
+        <Home
+            locales={[{name:'a'},{name:'b'}]}
+            store={this.props.store}
+        />
+      )
+    } else {
+      return (
+        <View style={styles.container}>
+          <Image
+              source={require('../../Images/background3.jpg')}
+              style={styles.backgroundImage}
+          >
+            <View style={styles.imagesContainer}>
+              <Text style={styles.welcome}>
+                SalsApp
+              </Text>
+              <Text style={styles.instructions}>
+                lorem ipsum dolor sit PARTY!
+              </Text>
+              <Facebook store={this.props.store} />
+            </View>
+          </Image>
+        </View>
+      )
+    }
   }
 }
 
