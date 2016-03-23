@@ -31,6 +31,7 @@ class Splash extends React.Component {
     this.checkLogged(this.props.loggedIn);
   }
   checkLogged(status){
+    console.log(Actions);
     if (status) {
       Actions.home();
     } else {

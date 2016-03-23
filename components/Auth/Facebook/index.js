@@ -40,7 +40,7 @@ class Login extends React.Component {
             authData,
             Id:key,
           });
-          Actions.home();
+          Actions.pop();
         })
         console.log('Authenticated in FireBase successfully with payload:', authData);
       }

@@ -4,7 +4,7 @@
  */
 import React, { AppRegistry } from 'react-native';
 import configureStore from './components/Redux/configureStore';
-import {Actions, Scene, Router} from 'react-native-router-flux';
+import { Actions, Scene, Router } from 'react-native-router-flux';
 
 import Splash from './views/Splash';
 import Login from './views/Login';
@@ -15,8 +15,8 @@ const store = configureStore({}, __DEBUG__);
 
 const scenes = Actions.create(
   <Scene hideNavBar key="root" >
-    <Scene component={Splash} key="splash" store={store}/>
-    <Scene component={Login} key="login" store={store}/>
+    <Scene component={Splash} key="splash" store={store} />
+    <Scene component={Login} key="login" store={store} />
     <Scene component={Home} key="home" store={store} title="Locales" type="replace"/>
   </Scene>
 );
@@ -24,7 +24,7 @@ const scenes = Actions.create(
 
 class SalsApp extends React.Component {
   render(){
-    return <Router scenes={scenes} hideNavBar/>
+    return <Router hideNavBar scenes={scenes}/>
   }
 }
 
