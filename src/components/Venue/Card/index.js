@@ -1,6 +1,6 @@
 import React, { Component, StyleSheet, PropTypes, View, Text } from 'react-native';
 
-class Home extends Component {
+class venueCard extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
   };
@@ -20,11 +20,10 @@ class Home extends Component {
 let styles = StyleSheet.create({
   card: {
     flex: 1,
+    flexDirection: 'row',
     alignItems: 'center',
     marginTop: 10,
     marginBottom: 8,
-    alignSelf: 'center',
-    textAlign: 'center',
     paddingTop: 15,
     paddingBottom: 15,
     paddingLeft: 10,
@@ -36,4 +35,4 @@ let styles = StyleSheet.create({
 
 
 
-export default Home;
+export default venueCard;

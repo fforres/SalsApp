@@ -20,8 +20,6 @@ class Home extends Component {
 
   componentWillMount() {
     const venueSet = this.props.venueSet;
-    // AQUI VA LA LLAMADA A FIREBASE
-    // LUEGO LE PASAS LA PROMISE AL ACTION CREATOR
     const venuesRef = ref.child('venues')
     venuesRef.once('value', function (data) {
       const venues = data.val();
@@ -42,7 +40,7 @@ class Home extends Component {
     return (
       <View style={styles.container}>
         <ListView
-            contentContainerStyle={styles.listCards}
+            style={styles.listCards}
             dataSource={ds.cloneWithRows(this.props.venues)}
             renderRow={this._renderRow}
         />
@@ -57,19 +55,13 @@ let styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F5FCFF',
     borderWidth:1 ,
-  }, listCards: {
+  },
+  listCards: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
     borderWidth:1,
     flexDirection: 'column',
-  }, separator: {
-    height: 1,
-    backgroundColor: '#CCCCCC',
   },
-
-
 })
 
 
