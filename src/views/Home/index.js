@@ -1,7 +1,7 @@
 import React, { Component, StyleSheet, PropTypes, View, ListView } from 'react-native';
 import { connect } from 'react-redux';
-import { actions as accountActions } from '../../components/Redux/modules/account';
-import { actions as venuesActions } from '../../components/Redux/modules/venues';
+import { actions as accountActions } from '../../utils/Redux/modules/account';
+import { actions as venuesActions } from '../../utils/Redux/modules/venues';
 import VenueCard from '../../components/Venue/Card';
 
 const mapStateToProps = (store) => {
