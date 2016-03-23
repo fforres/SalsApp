@@ -5,7 +5,7 @@
 import React, { PropTypes } from 'react-native';
 import Facebook from '../../components/Auth/Facebook';
 import { connect } from 'react-redux';
-import { actions as accountActions } from '../../components/Redux/modules/account';
+import { actions as accountActions } from '../../utils/Redux/modules/account';
 const {
   StyleSheet,
   Text,

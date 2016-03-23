@@ -5,8 +5,8 @@
 import React, { PropTypes } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux'
-import { actions as accountActions } from '../../components/Redux/modules/account';
-import { actions as sideBarActions } from '../../components/Redux/modules/sidebar';
+import { actions as accountActions } from '../../utils/Redux/modules/account';
+import { actions as sideBarActions } from '../../utils/Redux/modules/sidebar';
 const {
   StyleSheet,
   Text,

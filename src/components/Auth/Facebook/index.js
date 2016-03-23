@@ -1,10 +1,10 @@
 import React from 'react-native';
 import FBLogin from 'react-native-facebook-login';
 import { FBLoginManager } from 'NativeModules';
-import ref from '../../FireBase';
+import ref from '../../../utils/FireBase';
 
 import { connect } from 'react-redux';
-import { actions as accountActions } from '../../Redux/modules/account';
+import { actions as accountActions } from '../../../utils/Redux/modules/account';
 import { Actions } from 'react-native-router-flux'
 
 const mapStateToProps = (state) => {
@@ -40,7 +40,7 @@ class Login extends React.Component {
             authData,
             Id:key,
           });
-          Actions.pop();
+          Actions.home();
         })
         console.log('Authenticated in FireBase successfully with payload:', authData);
       }
