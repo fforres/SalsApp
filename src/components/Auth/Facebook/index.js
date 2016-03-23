@@ -1,4 +1,4 @@
-import React from 'react-native';
+import React, { Component, PropTypes } from 'react-native';
 import FBLogin from 'react-native-facebook-login';
 import { FBLoginManager } from 'NativeModules';
 import ref from '../../../utils/FireBase';
@@ -14,35 +14,66 @@ const mapStateToProps = (state) => {
   };
 };
 
-class Login extends React.Component {
+class Login extends Component {
+  static propTypes = {
+    logIn: PropTypes.func.isRequired,
+  };
+  constructor() {
+    super();
+    this.loginUser = this.loginUser.bind(this);
+  }
   componentDidMount(){
   }
+  loginUser(fbInfo, fbAuthData, authData, key){
+    console.log('Authenticated in FireBase successfully with payload:', authData);
+    this.props.logIn({
+      fbAuthData,
+      fbInfo,
+      authData,
+      Id:key,
+    });
+    Actions.home();
+  }
+  createUser(fbInfo, fbAuthData, authData){
+    const { loginUser } = this;
+    // Creating a new user
+    const newRef = ref.child('userData').push();
+    // Obtaining user new key
+    const key = newRef.key();
+    // Saving user data
+    newRef.set({
+      fbId: fbInfo.id,
+      email: authData.facebook.email,
+      facebookData : {
+        fbAuthData,
+        fbInfo,
+        authData,
+      },
+    }).then(()=>{
+      console.log('Authenticated in FireBase successfully with payload:', authData);
+      loginUser(fbInfo, fbAuthData, authData, key);
+    })
+  }
   checkUser(fbInfo, fbAuthData) {
-    const props = { ...this.props };
+    const { createUser, loginUser } = this;
     ref.authWithOAuthToken('facebook', fbAuthData.credentials.token, function(error, authData) {
       if (error) {
         console.log('Login Failed!', error);
       } else {
-        // Creating a new user
-        const newRef = ref.child('userData').push();
-        // Obtaining user new key
-        const key = newRef.key();
-        // Saving user data
-        newRef.set({
-          fbAuthData,
-          fbInfo,
-          authData,
-        }).then(()=>{
-          // logging in user locally
-          props.logIn({
-            fbAuthData,
-            fbInfo,
-            authData,
-            Id:key,
+        // Find if user exists
+        ref.child('userData')
+          .orderByChild('fbId')
+          .equalTo(authData[authData.auth.provider].id)
+          .once('value', function (dataSnapshot) {
+            if (dataSnapshot.val()) {
+              loginUser(fbInfo, fbAuthData, authData, Object.keys(dataSnapshot.val())[0]);
+              console.log('Authenticated in FireBase successfully with payload:', authData);
+            } else {
+              createUser(fbInfo, fbAuthData, authData);
+            }
+          }, function (error) {
+            console.log(error);
           });
-          Actions.home();
-        })
-        console.log('Authenticated in FireBase successfully with payload:', authData);
       }
     });
   }

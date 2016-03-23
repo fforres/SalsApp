@@ -42,6 +42,7 @@ class Home extends Component {
     return (
       <View style={styles.container}>
         <ListView
+            contentContainerStyle={styles.listCards}
             dataSource={ds.cloneWithRows(this.props.venues)}
             renderRow={this._renderRow}
         />
@@ -54,17 +55,21 @@ class Home extends Component {
 let styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#F5FCFF',
+    borderWidth:1 ,
+  }, listCards: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    borderWidth:1,
+    flexDirection: 'column',
+  }, separator: {
+    height: 1,
+    backgroundColor: '#CCCCCC',
   },
-  card: {
-    flex: 1,
-    margin: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'red',
-  },
+
+
 })
 
 

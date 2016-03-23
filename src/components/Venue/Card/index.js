@@ -20,11 +20,18 @@ class Home extends Component {
 let styles = StyleSheet.create({
   card: {
     flex: 1,
-    margin: 10,
-    justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 8,
+    alignSelf: 'center',
+    textAlign: 'center',
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingLeft: 10,
+    paddingRight: 10,
     backgroundColor: 'red',
   },
+
 })
 
 
