@@ -34,7 +34,11 @@ export default createReducer(initialState, {
   },
   [VENUE_SET]  (state, payload = null) {
     if (payload !== null) {
-      console.log(payload);
+      let newVenues = [];
+      Object.keys(payload).forEach(function(el){
+        newVenues.push(payload[el]);
+      })
+      return {...state, venues: newVenues}
     }
     return state;
   },
