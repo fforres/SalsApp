@@ -29,6 +29,22 @@ class Home extends Component {
     })
   }
 
+  componentDidMount() {
+    /*
+    const newRef = ref.child('venues').push();
+    newRef.set({
+      address: 'qwerty',
+      name: 'asd',
+      values : {
+        unique:2000,
+      },
+    }).then((a)=>{
+      console.log('Created Venue', a);
+    })
+    */
+  }
+
+
   _renderRow(data) {
     return (
       <VenueCard
