@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { actions as accountActions } from '../../utils/Redux/modules/account';
 import { actions as venuesActions } from '../../utils/Redux/modules/venues';
 import VenueCard from '../../components/Venue/Card';
-
+import ref from '../../utils/FireBase';
 const mapStateToProps = (store) => {
   return {
     venues : store.venues.venues
@@ -14,12 +14,21 @@ const ds = new ListView.DataSource({ rowHasChanged: (r1,r2) => r1 != r2});
 
 class Home extends Component {
   static propTypes = {
+    venueSet: PropTypes.func.isRequired,
     venues: PropTypes.arrayOf(PropTypes.object),
   };
 
   componentWillMount() {
+    const venueSet = this.props.venueSet;
     // AQUI VA LA LLAMADA A FIREBASE
     // LUEGO LE PASAS LA PROMISE AL ACTION CREATOR
+    const venuesRef = ref.child('venues')
+    venuesRef.once('value', function (data) {
+      const venues = data.val();
+      venueSet(venues);
+    }, function (err) {
+      console.log(err);
+    })
   }
 
   _renderRow(data) {
