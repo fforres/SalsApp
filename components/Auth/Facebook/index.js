@@ -5,9 +5,9 @@ import ref from '../../FireBase';
 
 import { connect } from 'react-redux';
 import { actions as accountActions } from '../../Redux/modules/account';
+import { Actions } from 'react-native-router-flux'
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     loggedIn: state.account.loggedIn,
     userData: state.account.userData,
@@ -40,6 +40,7 @@ class Login extends React.Component {
             authData,
             Id:key,
           });
+          Actions.pop();
         })
         console.log('Authenticated in FireBase successfully with payload:', authData);
       }
