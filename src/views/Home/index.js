@@ -6,9 +6,9 @@ import { Actions } from 'react-native-router-flux'
 
 import VenueCard from '../../components/Venue/Card';
 import ref from '../../utils/FireBase';
-const mapStateToProps = (store) => {
+const mapStateToProps = (state) => {
   return {
-    venues : store.venues.venues
+    venues : state.venues.venues,
   };
 }
 
@@ -26,31 +26,16 @@ class Home extends Component {
     this.openProfile = this.openProfile.bind(this);
     this.renderRow = this.renderRow.bind(this);
   }
-  componentWillMount() {
+  componentDidMount() {
     const venueSet = this.props.venueSet;
     const venuesRef = ref.child('venues')
     venuesRef.once('value', function (data) {
       const venues = data.val();
       venueSet(venues);
     }, function (err) {
-      console.log(err);
     })
   }
 
-  componentDidMount() {
-    /*
-    const newRef = ref.child('venues').push();
-    newRef.set({
-      address: 'qwerty',
-      name: 'asd',
-      values : {
-        unique:2000,
-      },
-    }).then((a)=>{
-      console.log('Created Venue', a);
-    })
-    */
-  }
   openProfile(data){
     this.props.venueCurrentSet(data);
     Actions.venue();
@@ -81,22 +66,17 @@ class Home extends Component {
   }
 }
 
-
 let styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',
-    borderWidth:1 ,
   },
   listCards: {
     flex: 1,
     backgroundColor: '#F5FCFF',
-    borderWidth:1,
     flexDirection: 'column',
   },
 })
-
-
 
 export default connect(mapStateToProps, accountActions)(
    connect(mapStateToProps, venuesActions)(Home)

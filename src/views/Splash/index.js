@@ -4,9 +4,7 @@
  */
 import React, { PropTypes } from 'react-native';
 import { connect } from 'react-redux';
-import { Actions } from 'react-native-router-flux'
 import { actions as accountActions } from '../../utils/Redux/modules/account';
-import { actions as sideBarActions } from '../../utils/Redux/modules/sidebar';
 const {
   StyleSheet,
   Text,
@@ -18,25 +16,13 @@ const mapStateToProps = (state) => {
   return {
     loggedIn: state.account.loggedIn,
     userData: state.account.userData,
-    isSideBarOpen: state.sidebar.isOpen,
   };
 };
 
 class Splash extends React.Component {
   static propTypes = {
-    isSideBarOpen: PropTypes.bool.isRequired,
     loggedIn: PropTypes.bool.isRequired,
   };
-  componentDidMount(){
-    this.checkLogged(this.props.loggedIn);
-  }
-  checkLogged(status){
-    if (status) {
-      Actions.home();
-    } else {
-      Actions.login();
-    }
-  }
   render(){
     return (
       <View style={styles.container}>
@@ -96,5 +82,4 @@ let styles = StyleSheet.create({
   },
 })
 
-export default
-connect(mapStateToProps, accountActions)(connect(mapStateToProps, sideBarActions)(Splash))
+export default connect(mapStateToProps, accountActions)(Splash);

@@ -1,21 +1,19 @@
-import React, { Component, StyleSheet, PropTypes, View, Text } from 'react-native';
+import React, { Component, StyleSheet, PropTypes, View } from 'react-native';
 import { connect } from 'react-redux';
 import { actions as accountActions } from '../../utils/Redux/modules/account';
 import { actions as venuesActions } from '../../utils/Redux/modules/venues';
 import Carousel from '../../components/Venue/Carousel';
-import ref from '../../utils/FireBase';
-const mapStateToProps = (store) => {
+const mapStateToProps = (state) => {
   return {
-    currentVenue : store.venues.current,
-    venues : store.venues.venues,
+    currentVenue : state.venues.current,
+    venues : state.venues.venues,
   };
 }
 
 class Home extends Component {
   static propTypes = {
-    currentVenue : PropTypes.object.isRequired
+    currentVenue : PropTypes.object.isRequired,
   };
-
   render(){
     return (
       <View style={styles.container}>
