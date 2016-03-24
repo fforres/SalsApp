@@ -7,8 +7,6 @@ import { Actions } from 'react-native-router-flux'
 import VenueCard from '../../components/Venue/Card';
 import ref from '../../utils/FireBase';
 const mapStateToProps = (state) => {
-  console.log('home');
-  console.log(state);
   return {
     venues : state.venues.venues,
   };
@@ -28,31 +26,16 @@ class Home extends Component {
     this.openProfile = this.openProfile.bind(this);
     this.renderRow = this.renderRow.bind(this);
   }
-  componentWillMount() {
+  componentDidMount() {
     const venueSet = this.props.venueSet;
     const venuesRef = ref.child('venues')
     venuesRef.once('value', function (data) {
       const venues = data.val();
       venueSet(venues);
     }, function (err) {
-      console.log(err);
     })
   }
 
-  componentDidMount() {
-    /*
-    const newRef = ref.child('venues').push();
-    newRef.set({
-      address: 'qwerty',
-      name: 'asd',
-      values : {
-        unique:2000,
-      },
-    }).then((a)=>{
-      console.log('Created Venue', a);
-    })
-    */
-  }
   openProfile(data){
     this.props.venueCurrentSet(data);
     Actions.venue();

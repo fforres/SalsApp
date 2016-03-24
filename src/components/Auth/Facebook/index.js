@@ -5,7 +5,6 @@ import ref from '../../../utils/FireBase';
 
 import { connect } from 'react-redux';
 import { actions as accountActions } from '../../../utils/Redux/modules/account';
-import { Actions } from 'react-native-router-flux'
 
 const mapStateToProps = (state) => {
   return {
@@ -25,14 +24,12 @@ class Login extends Component {
   componentDidMount(){
   }
   loginUser(fbInfo, fbAuthData, authData, key){
-    console.log('Authenticated in FireBase successfully with payload:', authData);
     this.props.logIn({
       fbAuthData,
       fbInfo,
       authData,
       Id:key,
     });
-    Actions.home();
   }
   createUser(fbInfo, fbAuthData, authData){
     const { loginUser } = this;
@@ -50,7 +47,6 @@ class Login extends Component {
         authData,
       },
     }).then(()=>{
-      console.log('Authenticated in FireBase successfully with payload:', authData);
       loginUser(fbInfo, fbAuthData, authData, key);
     })
   }
@@ -67,7 +63,6 @@ class Login extends Component {
           .once('value', function (dataSnapshot) {
             if (dataSnapshot.val()) {
               loginUser(fbInfo, fbAuthData, authData, Object.keys(dataSnapshot.val())[0]);
-              console.log('Authenticated in FireBase successfully with payload:', authData);
             } else {
               createUser(fbInfo, fbAuthData, authData);
             }
@@ -93,14 +88,14 @@ class Login extends Component {
           onLogin={function(data){
             console.log('Logged in!')
             console.log(data)
-            _this.setState({ user : data.credentials, fbLoading: true });
+            // _this.setState({ user : data.credentials, fbLoading: true });
             fetch(`https://graph.facebook.com/me?access_token=${data.credentials.token}`)
               .then(response => response.json())
               .then(json => _this.checkUser(json, data))
               .catch(error => console.log(error));
           }}
           onLoginFound={function(data){
-            _this.setState({ user : data.credentials, fbLoading: true });
+            // _this.setState({ user : data.credentials, fbLoading: true });
             fetch(`https://graph.facebook.com/me?access_token=${data.credentials.token}`)
               .then(response => response.json())
               .then(json => _this.checkUser(json, data))
@@ -109,7 +104,7 @@ class Login extends Component {
           onLoginNotFound={function(){
             console.log('No user logged in.')
             props.logOut();
-            _this.setState({ user : null })
+            // _this.setState({ user : null })
           }}
           onLogout={function(){
             console.log('Logged out.')

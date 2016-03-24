@@ -14,8 +14,6 @@ const {
 } = React;
 
 const mapStateToProps = (state) => {
-  console.log('login');
-  console.log(state);
   return {
     loggedIn: state.account.loggedIn,
     userData: state.account.userData,
@@ -44,7 +42,7 @@ class Splash extends React.Component {
             <Text style={styles.instructions}>
               lorem ipsum dolor sit PARTY!
             </Text>
-            <Facebook store={this.props.store} />
+            <Facebook />
           </View>
         </Image>
       </View>

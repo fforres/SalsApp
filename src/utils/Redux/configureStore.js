@@ -4,29 +4,40 @@ import thunk from 'redux-thunk';
 import devTools from 'remote-redux-devtools';
 import rootReducer from './modules';
 import { persistStore, autoRehydrate } from 'redux-persist'
+import { Actions } from 'react-native-router-flux'
 
 const persistConfig = {
   storage: AsyncStorage,
+  skipRestore: false,
 }
 export default function configureStore (initialState, __DEBUG__) {
-  let createStoreWithMiddleware;
+  let enhancer;
   const middleware = applyMiddleware(thunk);
   if(__DEBUG__){
-    createStoreWithMiddleware = compose(autoRehydrate(), middleware, devTools());
+    enhancer = compose(middleware, autoRehydrate(), devTools());
   } else {
-    createStoreWithMiddleware = compose(autoRehydrate(), middleware);
+    enhancer = compose(middleware, autoRehydrate());
   }
-
-  const store = createStoreWithMiddleware(createStore)(
-    rootReducer, initialState
+  const store = createStore(
+    rootReducer,
+    {},
+    enhancer
   );
-  persistStore(store, persistConfig)
-
+  persistStore(store, persistConfig,  () => {
+    console.log('ReHydrating')
+    if (store.getState().account.loggedIn) {
+      Actions.home();
+    } else {
+      Actions.login();
+    }
+  })
+  /*
   if (module.hot) {
-    module.hot.accept('./modules', () => {
+    module.hot.accept(() => {
       const nextRootReducer = require('./modules').default;
       store.replaceReducer(nextRootReducer);
     });
   }
+  */
   return store;
 }
