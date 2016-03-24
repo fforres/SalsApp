@@ -1,4 +1,4 @@
-import React, { Component, StyleSheet, PropTypes, View } from 'react-native';
+import React, { Component, StyleSheet, PropTypes, View, Text} from 'react-native';
 import { connect } from 'react-redux';
 import { actions as accountActions } from '../../utils/Redux/modules/account';
 import { actions as venuesActions } from '../../utils/Redux/modules/venues';
@@ -20,7 +20,11 @@ class Home extends Component {
         <Carousel
             {...this.props.currentVenue}
             photos={[]}
-        />
+        >
+        <View style={{ height: 500 }}>
+          <Text>Scroll me</Text>
+        </View>
+        </Carousel>
       </View>
     );
   }

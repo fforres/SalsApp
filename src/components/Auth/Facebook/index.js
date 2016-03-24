@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react-native';
 import FBLogin from 'react-native-facebook-login';
 import { FBLoginManager } from 'NativeModules';
 import ref from '../../../utils/FireBase';
-
+import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { actions as accountActions } from '../../../utils/Redux/modules/account';
 
@@ -21,8 +21,7 @@ class Login extends Component {
     super();
     this.loginUser = this.loginUser.bind(this);
   }
-  componentDidMount(){
-  }
+  componentDidMount(){}
   loginUser(fbInfo, fbAuthData, authData, key){
     this.props.logIn({
       fbAuthData,
@@ -30,6 +29,7 @@ class Login extends Component {
       authData,
       Id:key,
     });
+    Actions.home();
   }
   createUser(fbInfo, fbAuthData, authData){
     const { loginUser } = this;

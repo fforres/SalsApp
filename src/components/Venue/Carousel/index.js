@@ -1,59 +1,160 @@
-import React, { Component, StyleSheet, PropTypes, Image, Text, View } from 'react-native';
+import React, {
+  Component,
+  Dimensions,
+  Image,
+  ListView,
+  PropTypes,
+  StyleSheet,
+  Text,
+  View,
+  TouchableHighlight,
+} from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
-import Dimensions from 'Dimensions';
-const window = Dimensions.get('window');
-const PARALLAX_HEADER_HEIGHT = 200;
-const STICKY_HEADER_HEIGHT = 50;
-// TODO: Add parallax
-class RNCarousel extends Component {
+import ScrollableTabView from 'react-native-scrollable-tab-view';
+
+const Icon = require('react-native-vector-icons/FontAwesome');
+class Talks extends Component {
+  constructor(props) {
+    super(props);
+    this.state =  {
+      dataSource: new ListView.DataSource({
+        rowHasChanged: (r1, r2) => r1 !== r2,
+      }).cloneWithRows([
+        'Simplicity Matters',
+        'Hammock Driven Development',
+        'Value of Values',
+        'Are We There Yet?',
+        'The Language of the System',
+        'Design, Composition, and Performance',
+        'Clojure core.async',
+        'The Functional Database',
+        'Deconstructing the Database',
+        'Hammock Driven Development',
+        'Value of Values',
+      ]),
+    };
+  }
   static propTypes = {
+    address: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     profileImage: PropTypes.string.isRequired,
-    address: PropTypes.string.isRequired,
   };
-  componentWillMount(){
-  }
+
   render() {
-    // const { photos, profileImage } = this.props;
+    const {onScroll = () => {}} = this.props;
     return (
       <ParallaxScrollView
-          backgroundSpeed={50}
-          headerBackgroundColor={'transparent'}
+          backgroundSpeed={10}
+          headerBackgroundColor="rgba(30,159,117,1)"
+          onScroll={onScroll}
           parallaxHeaderHeight={PARALLAX_HEADER_HEIGHT}
-          ref={'ParallaxView'}
-          renderBackground={() => {
-            return (
-              <View style={styles.background}>
-                <Image source={{uri: this.props.profileImage,
-                                width: window.width,
-                                height: PARALLAX_HEADER_HEIGHT}}
-                />
-
-                <View style={{position: 'absolute',
-                              top: 0,
-                              width: window.width,
-                              backgroundColor: 'rgba(0,0,0,.4)',
+          ref="ParallaxView"
+          renderBackground={() => (
+            <View key="background">
+              <Image source={{uri: this.props.profileImage,
+                              resizeMode: 'cover',
+                              flex: 1,
+                              justifyContent: 'center',
                               height: PARALLAX_HEADER_HEIGHT}}
-                />
-              </View>
-            )
-          }}
+              />
+              <View style={{position: 'absolute',
+                            flex: 1,
+                            justifyContent: 'center',
+                            top: 0,
+                            width: window.height,
+                            backgroundColor: 'rgba(0,0,0,.4)',
+                            height: PARALLAX_HEADER_HEIGHT}}
+              />
+            </View>
+          )}
+          renderFixedHeader={() => (
+            <View key="fixed-header" style={styles.fixedSection}>
+              <Icon
+                  name={'chevron-left'}
+                  onPress={() => {Actions.pop()}}
+                  style={styles.fixedSectionText}
+              />
+              <Icon
+                  name={'bars'}
+                  onPress={() => {Actions.profile()}}
+                  style={styles.fixedSectionText}
+              />
+            </View>
+          )}
           renderForeground={() => (
-            <View style={{ height: 300, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-              <Text style={styles.name}>{this.props.name}</Text>
-              <Text style={styles.address}>{this.props.address}</Text>
+            <View key="parallax-header" style={styles.parallaxHeader}>
+              <Text style={styles.sectionSpeakerText}>
+                {this.props.name}
+              </Text>
+              <Text style={styles.sectionTitleText}>
+                {this.props.address}
+              </Text>
+            </View>
+          )}
+          renderStickyHeader={() => (
+            <View key="sticky-header" style={styles.stickySection}>
+              <Text style={styles.stickySectionText}>{this.props.name}</Text>
             </View>
           )}
           stickyHeaderHeight={STICKY_HEADER_HEIGHT}
       >
-        <View style={{ height: 500 }}>
-          <Text>Scroll me</Text>
-        </View>
+      <View style={styles.buttonBar}>
+        <TouchableHighlight style={styles.buttonBarTouchable}>
+          <View style={styles.buttonBarIcon}>
+            <Icon
+                name={'map'}
+                onPress={() => {Actions.map()}}
+                style={styles.buttonBarImage}
+            />
+            <Text
+                style={styles.buttonBarText}
+            >Mapa</Text>
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.buttonBarTouchable}>
+          <View style={styles.buttonBarIcon}>
+            <Icon
+                name={'ticket'}
+                onPress={() => {Actions.entradas()}}
+                style={styles.buttonBarImageHighlighted}
+            />
+            <Text
+                style={styles.buttonBarText}
+            >Entradas</Text>
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.buttonBarTouchable}>
+          <View style={styles.buttonBarIcon}>
+            <Icon
+                name={'calendar'}
+                onPress={() => {Actions.horarios()}}
+                style={styles.buttonBarImage}
+            />
+            <Text
+                style={styles.buttonBarText}
+            >Horarios</Text>
+          </View>
+        </TouchableHighlight>
+
+      </View>
       </ParallaxScrollView>
     );
   }
 }
-let styles = StyleSheet.create({
+
+const window = Dimensions.get('window');
+
+const AVATAR_SIZE = 120;
+const ROW_HEIGHT = 60;
+const PARALLAX_HEADER_HEIGHT = 250;
+const STICKY_HEADER_HEIGHT = 60;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'rgba(30,159,117,1)',
+  },
   background: {
     position: 'absolute',
     top: 0,
@@ -61,40 +162,102 @@ let styles = StyleSheet.create({
     width: window.width,
     height: PARALLAX_HEADER_HEIGHT,
   },
-
-  backgroundImage: {
-    flex: 1,
-    resizeMode: 'cover',
-    position: 'absolute',
-    top: 0,
+  stickySection: {
+    height: STICKY_HEADER_HEIGHT,
     width: window.width,
-    backgroundColor: 'rgba(0,0,0,.4)',
+    backgroundColor: 'rgba(30,159,117,1)',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-
-  fixedSection: {
-    position: 'absolute',
-    bottom: 10,
-    right: 10,
-  },
-  fixedSectionText: {
-    color: '#999',
+  stickySectionText: {
+    color: 'white',
+    paddingTop: 8,
     fontSize: 20,
   },
-  name:{
-    backgroundColor: 'transparent',
-    // fontFamily: 'Bebas Neue',
-    color: 'white',
-    fontSize: 25,
+  fixedSection: {
+    position: 'absolute',
+    flex: 1,
+    flexDirection: 'row',
+    bottom: 15,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    left: 10,
+    right:10,
   },
-  address: {
-    backgroundColor: 'transparent',
+  fixedSectionText: {
     color: 'white',
-    marginTop: 3,
-    marginLeft: 4,
-    fontSize: 12,
+    fontSize: 18,
   },
-
-
+  fixedSectionTextHighlight: {
+    color: 'white',
+    fontSize: 29,
+  },
+  parallaxHeader: {
+    alignItems: 'center',
+    flex: 1,
+    flexDirection: 'column',
+    paddingTop: 100,
+  },
+  avatar: {
+    marginBottom: 10,
+    borderRadius: AVATAR_SIZE / 2,
+  },
+  sectionSpeakerText: {
+    color: 'white',
+    fontSize: 24,
+    paddingVertical: 5,
+  },
+  sectionTitleText: {
+    color: 'white',
+    fontSize: 18,
+    paddingVertical: 5,
+  },
+  row: {
+    overflow: 'hidden',
+    paddingHorizontal: 10,
+    height: ROW_HEIGHT,
+    backgroundColor: 'white',
+    borderColor: '#ccc',
+    borderBottomWidth: 1,
+    justifyContent: 'center',
+  },
+  rowText: {
+    fontSize: 20,
+  },
+  buttonBar: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    paddingTop:8,
+    paddingLeft:10,
+    paddingRight:10,
+    paddingBottom:8,
+    backgroundColor: 'rgba(230,230,230,1)',
+  },
+  buttonBarTouchable: {
+    flex: 1,
+  },
+  buttonBarIcon: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  buttonBarImage: {
+    color:'black',
+    alignItems: 'center',
+    fontSize: 16,
+  },
+  buttonBarImageHighlighted: {
+    color:'black',
+    alignItems: 'center',
+    fontSize: 24,
+  },
+  buttonBarText: {
+    color:'black',
+    paddingTop: 3,
+    alignItems: 'center',
+    fontSize: 10,
+  },
 });
 
-export default RNCarousel;
+export default Talks;

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { actions as accountActions } from '../../utils/Redux/modules/account';
 import { actions as venuesActions } from '../../utils/Redux/modules/venues';
 import { Actions } from 'react-native-router-flux'
-
+import StickyHeader from '../../components/NavBar';
 import VenueCard from '../../components/Venue/Card';
 import ref from '../../utils/FireBase';
 const mapStateToProps = (state) => {
@@ -33,6 +33,7 @@ class Home extends Component {
       const venues = data.val();
       venueSet(venues);
     }, function (err) {
+
     })
   }
 
@@ -55,12 +56,15 @@ class Home extends Component {
       return venues[el];
     })
     return (
-      <View style={styles.container}>
-        <ListView
-            dataSource={ds.cloneWithRows(newVenues)}
-            renderRow={this.renderRow}
-            style={styles.listCards}
-        />
+      <View >
+        <View style={styles.container}>
+          <ListView
+              dataSource={ds.cloneWithRows(newVenues)}
+              renderRow={this.renderRow}
+              style={styles.listCards}
+          />
+        </View>
+        <StickyHeader/>
       </View>
     );
   }
