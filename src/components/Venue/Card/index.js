@@ -7,13 +7,15 @@ class venueCard extends Component {
   static propTypes = {
     address: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    openProfile: PropTypes.any,
+    clearProfile: PropTypes.any,
     profileImage: PropTypes.string.isRequired,
   };
   componentWillMount() {
   }
-  onPressCard(){
-    const _this = this;
-    console.log(_this);
+  onPressCard(props){
+    this.props.clearProfile();
+    this.props.openProfile(props);
   }
   render(){
     return (
@@ -31,7 +33,7 @@ class venueCard extends Component {
             </View>
             <View style={[styles.buttonRight]}>
               <TouchableHighlight
-                  onPress={this.onPressCard}
+                  onPress={()=>{ this.onPressCard(this.props) }}
                   style={[styles.flatButtonWrapper]}
                   underlayColor={'rgba(150,150,150,0.4)'}
               >
@@ -81,7 +83,9 @@ let styles = StyleSheet.create({
   address: {
     backgroundColor: 'transparent',
     color: 'white',
-    fontSize: 15,
+    marginTop: 3,
+    marginLeft: 4,
+    fontSize: 12,
   },
   flatButtonWrapper: {
     width: window.width/6,
@@ -100,7 +104,7 @@ let styles = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
-  }
+  },
 });
 
 export default venueCard;
