@@ -42,7 +42,7 @@ class Splash extends React.Component {
             <Text style={styles.instructions}>
               lorem ipsum dolor sit PARTY!
             </Text>
-            <Facebook />
+            <Facebook store={this.props.store}/>
           </View>
         </Image>
       </View>

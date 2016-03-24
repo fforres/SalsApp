@@ -11,8 +11,6 @@ class venueCard extends Component {
     clearProfile: PropTypes.any,
     profileImage: PropTypes.string.isRequired,
   };
-  componentWillMount() {
-  }
   onPressCard(props){
     this.props.clearProfile();
     this.props.openProfile(props);

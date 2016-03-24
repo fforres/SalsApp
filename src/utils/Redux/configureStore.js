@@ -25,11 +25,14 @@ export default function configureStore (initialState, __DEBUG__) {
   );
   persistStore(store, persistConfig,  () => {
     console.log('ReHydrating')
-    if (store.getState().account.loggedIn) {
-      Actions.home();
-    } else {
-      Actions.login();
-    }
+    console.log(store.getState().account);
+    setTimeout(function () {
+      if (store.getState().account.loggedIn) {
+        Actions.home();
+      } else {
+        Actions.login();
+      }
+    }, 1000);
   })
   /*
   if (module.hot) {
