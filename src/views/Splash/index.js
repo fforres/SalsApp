@@ -15,6 +15,8 @@ const {
 } = React;
 
 const mapStateToProps = (state) => {
+  console.log('splash');
+  console.log(state);
   return {
     loggedIn: state.account.loggedIn,
     userData: state.account.userData,
@@ -28,7 +30,7 @@ class Splash extends React.Component {
     loggedIn: PropTypes.bool.isRequired,
   };
   componentDidMount(){
-    this.checkLogged(this.props.loggedIn);
+    // this.checkLogged(this.props.loggedIn);
   }
   checkLogged(status){
     if (status) {

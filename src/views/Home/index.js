@@ -6,9 +6,11 @@ import { Actions } from 'react-native-router-flux'
 
 import VenueCard from '../../components/Venue/Card';
 import ref from '../../utils/FireBase';
-const mapStateToProps = (store) => {
+const mapStateToProps = (state) => {
+  console.log('home');
+  console.log(state);
   return {
-    venues : store.venues.venues
+    venues : state.venues.venues,
   };
 }
 
@@ -81,22 +83,17 @@ class Home extends Component {
   }
 }
 
-
 let styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',
-    borderWidth:1 ,
   },
   listCards: {
     flex: 1,
     backgroundColor: '#F5FCFF',
-    borderWidth:1,
     flexDirection: 'column',
   },
 })
-
-
 
 export default connect(mapStateToProps, accountActions)(
    connect(mapStateToProps, venuesActions)(Home)

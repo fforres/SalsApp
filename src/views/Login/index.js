@@ -14,6 +14,8 @@ const {
 } = React;
 
 const mapStateToProps = (state) => {
+  console.log('login');
+  console.log(state);
   return {
     loggedIn: state.account.loggedIn,
     userData: state.account.userData,

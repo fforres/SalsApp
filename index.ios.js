@@ -16,7 +16,7 @@ const store = configureStore({}, __DEBUG__);
 
 const scenes = Actions.create(
   <Scene hideNavBar key="root" >
-      <Scene component={Splash} key="splash" store={store} />
+      <Scene component={Splash} initial key="splash" store={store} />
       <Scene component={Login} key="login" store={store} />
       <Scene component={Home}  direction="horizontal" key="home" store={store} title="Locales" type="replace"/>
       <Scene component={Venue}  direction="horizontal" key="venue" store={store} />
