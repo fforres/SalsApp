@@ -10,6 +10,7 @@
     "react": "0.14.7",
     "react-native": "0.22.0",
     "react-native-facebook-login": "1.0.3",
+    "react-native-parallax-scroll-view": "0.18.0",
     "react-native-router-flux": "3.1.5",
     "redux-thunk": "2.0.1"
   },
