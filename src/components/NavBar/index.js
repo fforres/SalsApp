@@ -11,7 +11,7 @@ class NavBar extends Component {
       <View style={styles.fixedSection}>
         <Icon
             name={'bars'}
-            onPress={() => {Actions.pop()}}
+            onPress={() => {Actions.menu()}}
             style={styles.fixedSectionText}
         />
       </View>
@@ -31,11 +31,12 @@ let styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'transparent',
     justifyContent: 'flex-end',
-    paddingLeft: 12,
-    paddingTop: 18,
-    paddingRight: 10,
+    marginLeft: 2,
+    marginTop: 8,
+    marginRight: 0,
   },
   fixedSectionText: {
+    padding: 10,
     color: 'white',
     fontSize: 20,
   },

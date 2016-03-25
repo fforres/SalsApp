@@ -58,7 +58,7 @@ class Talks extends Component {
               />
               <Icon
                   name={'bars'}
-                  onPress={() => {Actions.profile()}}
+                  onPress={() => {Actions.menu()}}
                   style={styles.fixedSectionText}
               />
             </View>

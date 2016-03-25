@@ -20,24 +20,13 @@ class Home extends Component {
   componentDidMount(){
     const {venueCurrentScheduleUnset, venueCurrentScheduleSet, currentVenue} = this.props;
     venueCurrentScheduleUnset();
-    const venuesScheduleRef = ref.child('venues_schedules/' + currentVenue.id )
+    const venuesScheduleRef = ref.child('schedules/' + currentVenue.id )
     venuesScheduleRef.once('value', function (data) {
       const venueSchedule = data.val();
-      var schedulesRef = ref.child('schedules');
-      Object.keys(venueSchedule).map(function(el){
-        schedulesRef = schedulesRef.equalTo(el)
-      })
-      debugger;
-      schedulesRef.once('value', function(newData){
-        console.log(newData)
-        debugger;
-      })
       venueCurrentScheduleSet(venueSchedule);
     }, function (err) {
       console.log(err);
     })
-
-
   }
   render(){
     return (

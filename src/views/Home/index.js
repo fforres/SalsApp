@@ -57,7 +57,7 @@ class Home extends Component {
       return venues[el];
     })
     return (
-      <View >
+      <View style={styles.container}>
         <View style={styles.container}>
           <ListView
               dataSource={ds.cloneWithRows(newVenues)}
