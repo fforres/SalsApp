@@ -6,9 +6,6 @@ class NavBar extends Component {
   constructor() {
     super();
   }
-  componentDidMount(){
-    console.log('aoasdhjadsj');
-  }
   render(){
     return (
       <View style={styles.fixedSection}>

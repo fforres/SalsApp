@@ -20,11 +20,7 @@ class Home extends Component {
         <Carousel
             {...this.props.currentVenue}
             photos={[]}
-        >
-        <View style={{ height: 500 }}>
-          <Text>Scroll me</Text>
-        </View>
-        </Carousel>
+        />
       </View>
     );
   }
