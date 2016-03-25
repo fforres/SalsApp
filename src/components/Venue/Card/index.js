@@ -69,6 +69,7 @@ let styles = StyleSheet.create({
   welcome: {
     flex: 1,
     padding: 10,
+    paddingTop: 22,
     justifyContent: 'space-between',
     backgroundColor: 'rgba(0,0,0,0.3)',
   },

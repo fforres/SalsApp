@@ -1,46 +1,26 @@
-import React, {
-  Component,
-  Dimensions,
-  Image,
-  ListView,
-  PropTypes,
-  StyleSheet,
-  Text,
-  View,
-  TouchableHighlight,
-} from 'react-native';
+import React, { Component, Dimensions, Image, PropTypes, StyleSheet, Text, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
+import Orientation from 'react-native-orientation';
+import Gmap from '../../Map';
 
 const Icon = require('react-native-vector-icons/FontAwesome');
 class Talks extends Component {
-  constructor(props) {
-    super(props);
-    this.state =  {
-      dataSource: new ListView.DataSource({
-        rowHasChanged: (r1, r2) => r1 !== r2,
-      }).cloneWithRows([
-        'Simplicity Matters',
-        'Hammock Driven Development',
-        'Value of Values',
-        'Are We There Yet?',
-        'The Language of the System',
-        'Design, Composition, and Performance',
-        'Clojure core.async',
-        'The Functional Database',
-        'Deconstructing the Database',
-        'Hammock Driven Development',
-        'Value of Values',
-      ]),
-    };
-  }
   static propTypes = {
     address: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     profileImage: PropTypes.string.isRequired,
   };
-
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount(){
+    Orientation.lockToPortrait(); //this will lock the view to Portrait
+  }
+  componentWillUnmount(){
+    Orientation.unlockAllOrientations(); //this will lock the view to Portrait
+  }
   render() {
     const {onScroll = () => {}} = this.props;
     return (
@@ -99,56 +79,29 @@ class Talks extends Component {
           )}
           stickyHeaderHeight={STICKY_HEADER_HEIGHT}
       >
-      <View style={styles.buttonBar}>
-        <TouchableHighlight style={styles.buttonBarTouchable}>
-          <View style={styles.buttonBarIcon}>
-            <Icon
-                name={'map'}
-                onPress={() => {Actions.map()}}
-                style={styles.buttonBarImage}
-            />
-            <Text
-                style={styles.buttonBarText}
-            >Mapa</Text>
+        <ScrollableTabView initialPage={1}>
+          <View tabLabel="Mapa" style={styles.tabViewMapa} onLayout={(e)=>{
+            console.log(e);
+          }}
+          >
+            <Gmap {...this.props}/>
           </View>
-        </TouchableHighlight>
-        <TouchableHighlight style={styles.buttonBarTouchable}>
-          <View style={styles.buttonBarIcon}>
-            <Icon
-                name={'ticket'}
-                onPress={() => {Actions.entradas()}}
-                style={styles.buttonBarImageHighlighted}
-            />
-            <Text
-                style={styles.buttonBarText}
-            >Entradas</Text>
+          <View tabLabel="Entradas" style={styles.tabView}>
           </View>
-        </TouchableHighlight>
-        <TouchableHighlight style={styles.buttonBarTouchable}>
-          <View style={styles.buttonBarIcon}>
-            <Icon
-                name={'calendar'}
-                onPress={() => {Actions.horarios()}}
-                style={styles.buttonBarImage}
-            />
-            <Text
-                style={styles.buttonBarText}
-            >Horarios</Text>
+          <View tabLabel="Horario" style={styles.tabView}>
           </View>
-        </TouchableHighlight>
-
-      </View>
+        </ScrollableTabView>
       </ParallaxScrollView>
     );
   }
 }
 
 const window = Dimensions.get('window');
-
 const AVATAR_SIZE = 120;
 const ROW_HEIGHT = 60;
 const PARALLAX_HEADER_HEIGHT = 250;
 const STICKY_HEADER_HEIGHT = 60;
+const TABVIEW_HEIGHT = window.height - (PARALLAX_HEADER_HEIGHT + 50);
 
 const styles = StyleSheet.create({
   container: {
@@ -257,6 +210,21 @@ const styles = StyleSheet.create({
     paddingTop: 3,
     alignItems: 'center',
     fontSize: 10,
+  },
+  tabViewMapa:{
+    flex: 1,
+    alignItems:'stretch',
+    height:TABVIEW_HEIGHT,
+    top:0,
+    bottom:0,
+    backgroundColor: 'rgba(120,120,123,1)',
+  },
+  tabView:{
+    flex: 1,
+    alignItems:'stretch',
+    top:0,
+    bottom:0,
+    backgroundColor: 'rgba(120,120,123,1)',
   },
 });
 

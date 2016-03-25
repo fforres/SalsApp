@@ -1,6 +1,7 @@
 package com.salsapp;
 
 import com.facebook.react.ReactActivity;
+import com.AirMaps.AirPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.magus.fblogin.FacebookLoginPackage;
 import com.facebook.react.ReactPackage;
@@ -37,6 +38,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new AirPackage(),
             new VectorIconsPackage(),
             new FacebookLoginPackage()
         );
