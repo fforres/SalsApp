@@ -18,7 +18,7 @@ class Home extends Component {
   static propTypes = {
     venueCurrentSet: PropTypes.func.isRequired,
     venueCurrentUnset: PropTypes.func.isRequired,
-    venueSet: PropTypes.func.isRequired,
+    venuesSet: PropTypes.func.isRequired,
     venues: PropTypes.objectOf(PropTypes.object),
   };
   constructor() {
@@ -27,11 +27,11 @@ class Home extends Component {
     this.renderRow = this.renderRow.bind(this);
   }
   componentDidMount() {
-    const venueSet = this.props.venueSet;
+    const venuesSet = this.props.venuesSet;
     const venuesRef = ref.child('venues')
     venuesRef.once('value', function (data) {
       const venues = data.val();
-      venueSet(venues);
+      venuesSet(venues);
     }, function (err) {
 
     })
@@ -53,6 +53,7 @@ class Home extends Component {
   render(){
     const { venues } = this.props;
     const newVenues = Object.keys(venues).map(function(el){
+      venues[el].id = el
       return venues[el];
     })
     return (

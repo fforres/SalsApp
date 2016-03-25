@@ -3,27 +3,32 @@ import createReducer from '../../createReducer';
 // ------------------------------------
 // Constants
 // ------------------------------------
-const VENUE_ADD = 'VENUE_ADD';
-const VENUE_SET = 'VENUE_SET';
-const VENUE_CLEAR = 'VENUE_CLEAR';
+const VENUES_SET = 'VENUES_SET';
+const VENUES_UNSET = 'VENUES_UNSET';
 const VENUE_CURRENT_SET = 'VENUE_CURRENT_SET';
 const VENUE_CURRENT_UNSET = 'VENUE_CURRENT_UNSET';
+const VENUE_CURRENT_SCHEDULE_SET = 'VENUE_CURRENT_SCHEDULE_SET';
+const VENUE_CURRENT_SCHEDULE_UNSET = 'VENUE_CURRENT_SCHEDULE_UNSET';
+const VENUE_CLEAR = 'VENUE_CLEAR';
 
 // ------------------------------------
 // Actions
 // ------------------------------------
-export const venueAdd = (data) => ({ type: VENUE_ADD, payload: data });
-export const venueSet = (data) => ({ type: VENUE_SET, payload: data });
-export const venueClear = () => ({ type: VENUE_CLEAR });
+export const venuesSet = (data) => ({ type: VENUES_SET, payload: data });
+export const venuesUnset = () => ({ type: VENUES_UNSET });
 export const venueCurrentSet = (data) => ({ type: VENUE_CURRENT_SET, payload: data });
 export const venueCurrentUnset = () => ({ type: VENUE_CURRENT_UNSET });
+export const venueCurrentScheduleSet = (data) => ({ type: VENUE_CURRENT_SCHEDULE_SET, payload: data });
+export const venueCurrentScheduleUnset = () => ({ type: VENUE_CURRENT_SCHEDULE_UNSET });
+export const venueClear = () => ({ type: VENUE_CLEAR });
 
 export const actions = {
-  venueAdd,
-  venueSet,
-  venueClear,
+  venuesSet,
+  venuesUnset,
   venueCurrentSet,
   venueCurrentUnset,
+  venueCurrentScheduleSet,
+  venueCurrentScheduleUnset,
 };
 
 // ------------------------------------
@@ -32,18 +37,18 @@ export const actions = {
 const initialState = {
   venues: {},
   current: {},
+  currentSchedule: {},
 };
 export default createReducer(initialState, {
-  [VENUE_ADD] (state, payload = null) {
-    if (payload !== null) {
-    }
-    return state;
-  },
-  [VENUE_SET]  (state, payload = null) {
+
+  [VENUES_SET]  (state, payload = null) {
     if (payload !== null) {
       return {...state, venues: payload}
     }
     return state;
+  },
+  [VENUES_UNSET] (state) {
+    return {...state, venues: initialState.venues}
   },
   [VENUE_CURRENT_SET]  (state, payload = null) {
     if (payload !== null) {
@@ -51,13 +56,20 @@ export default createReducer(initialState, {
     }
     return state;
   },
-  [VENUE_CURRENT_UNSET]  (state, payload = null) {
+  [VENUE_CURRENT_UNSET]  (state) {
+    return {...state, current: initialState.current}
+  },
+  [VENUE_CURRENT_SCHEDULE_SET]  (state, payload = null) {
     if (payload !== null) {
-      return {...state, current: initialState.current}
+      return {...state, currentSchedule: {...payload}}
     }
     return state;
   },
-  [VENUE_CLEAR] () {
+  [VENUE_CURRENT_SCHEDULE_UNSET]  (state) {
+    return {...state, currentSchedule: initialState.currentSchedule}
+  },
+  [VENUE_CLEAR]  () {
     return initialState;
   },
+
 });

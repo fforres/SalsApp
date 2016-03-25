@@ -16,6 +16,7 @@ class Talks extends Component {
     super(props);
   }
   componentDidMount(){
+    console.log(this.props);
     Orientation.lockToPortrait(); //this will lock the view to Portrait
   }
   componentWillUnmount(){
