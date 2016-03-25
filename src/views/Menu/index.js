@@ -23,7 +23,7 @@ class Menu extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          You will be able to see your Menu
+          You will be able to see your Menu here
         </Text>
       </View>
     )

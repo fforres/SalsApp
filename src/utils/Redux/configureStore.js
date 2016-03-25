@@ -32,7 +32,7 @@ export default function configureStore (initialState, __DEBUG__) {
       } else {
         Actions.login();
       }
-    }, 3000);
+    }, 100);
   })
   return store;
 }
