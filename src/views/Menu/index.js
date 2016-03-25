@@ -18,12 +18,12 @@ const mapStateToProps = (state) => {
   };
 };
 
-class Horarios extends Component {
+class Menu extends Component {
   render(){
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          You will be able to see the venue available hours
+          You will be able to see your Menu here
         </Text>
       </View>
     )
@@ -39,4 +39,4 @@ let styles = StyleSheet.create({
   },
 })
 
-export default connect(mapStateToProps, accountActions)(Horarios);
+export default connect(mapStateToProps, accountActions)(Menu);

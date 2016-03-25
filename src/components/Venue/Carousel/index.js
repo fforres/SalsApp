@@ -4,6 +4,7 @@ import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import Orientation from 'react-native-orientation';
 import Gmap from '../../Map';
+import Schedule from '../../Schedule';
 
 const Icon = require('react-native-vector-icons/FontAwesome');
 class Talks extends Component {
@@ -22,12 +23,10 @@ class Talks extends Component {
     Orientation.unlockAllOrientations(); //this will lock the view to Portrait
   }
   render() {
-    const {onScroll = () => {}} = this.props;
     return (
       <ParallaxScrollView
           backgroundSpeed={10}
           headerBackgroundColor="rgba(30,159,117,1)"
-          onScroll={onScroll}
           parallaxHeaderHeight={PARALLAX_HEADER_HEIGHT}
           ref="ParallaxView"
           renderBackground={() => (
@@ -57,17 +56,17 @@ class Talks extends Component {
               />
               <Icon
                   name={'bars'}
-                  onPress={() => {Actions.profile()}}
+                  onPress={() => {Actions.menu()}}
                   style={styles.fixedSectionText}
               />
             </View>
           )}
           renderForeground={() => (
             <View key="parallax-header" style={styles.parallaxHeader}>
-              <Text style={styles.sectionSpeakerText}>
+              <Text style={styles.titleText}>
                 {this.props.name}
               </Text>
-              <Text style={styles.sectionTitleText}>
+              <Text style={styles.subTitleText}>
                 {this.props.address}
               </Text>
             </View>
@@ -80,15 +79,30 @@ class Talks extends Component {
           stickyHeaderHeight={STICKY_HEADER_HEIGHT}
       >
         <ScrollableTabView initialPage={1}>
-          <View tabLabel="Mapa" style={styles.tabViewMapa} onLayout={(e)=>{
-            console.log(e);
-          }}
+          <View
+              style={styles.tabViewMapa}
+              tabLabel="Mapa"
           >
             <Gmap {...this.props}/>
           </View>
-          <View tabLabel="Entradas" style={styles.tabView}>
+          <View
+              style={styles.tabView}
+              tabLabel="Entradas" 
+          >
+            <Text style={styles.message}>
+              Here, there's going to be a place for you to buy tickets.
+            </Text>
+            <Icon
+                name={'ticket'}
+                onPress={() => {}}
+                style={styles.messageIcon}
+            />
           </View>
-          <View tabLabel="Horario" style={styles.tabView}>
+          <View
+              style={styles.tabView}
+              tabLabel="Horario" 
+          >
+            <Schedule {...this.props}/>
           </View>
         </ScrollableTabView>
       </ParallaxScrollView>
@@ -155,14 +169,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderRadius: AVATAR_SIZE / 2,
   },
-  sectionSpeakerText: {
+  titleText: {
     color: 'white',
-    fontSize: 24,
+    fontSize: 28,
     paddingVertical: 5,
   },
-  sectionTitleText: {
+  subTitleText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 20,
     paddingVertical: 5,
   },
   row: {
@@ -225,6 +239,22 @@ const styles = StyleSheet.create({
     top:0,
     bottom:0,
     backgroundColor: 'rgba(120,120,123,1)',
+  },
+
+
+
+  message: {
+    fontSize: 30,
+    backgroundColor: 'white',
+    textAlign: 'center',
+    padding: 20,
+    paddingTop: 60,
+  },
+  messageIcon: {
+    fontSize: 60,
+    backgroundColor: 'white',
+    textAlign: 'center',
+    padding: 20,
   },
 });
 

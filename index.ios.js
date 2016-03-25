@@ -7,7 +7,7 @@ import configureStore from './src/utils/Redux/configureStore';
 import { Actions, Scene, Router } from 'react-native-router-flux';
 
 import Splash from './src/views/Splash';
-import Horarios from './src/views/Horarios';
+import Menu from './src/views/Menu';
 import Profile from './src/views/Profile';
 import Entradas from './src/views/Entradas';
 import Login from './src/views/Login';
@@ -25,7 +25,7 @@ const scenes = Actions.create(
       <Scene component={Home} direction="horizontal" key="home" store={store} title="Locales" type="replace"/>
       <Scene component={Venue} direction="horizontal" key="venue" store={store} />
       <Scene component={Entradas} direction="vertical" key="entradas" store={store} />
-      <Scene component={Horarios} direction="vertical" key="horarios" store={store} />
+      <Scene component={Menu} direction="vertical" key="menu" store={store} />
       <Scene component={Profile} direction="vertical" key="profile" store={store} />
   </Scene>
 );

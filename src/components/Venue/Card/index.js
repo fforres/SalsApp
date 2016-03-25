@@ -52,7 +52,7 @@ class venueCard extends Component {
 let styles = StyleSheet.create({
   card: {
     flex: 1,
-    height:window.height/3.2,
+    height:window.height/3.4,
   },
   fullSize: {
     position: 'absolute',

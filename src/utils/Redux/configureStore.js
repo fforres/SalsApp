@@ -32,15 +32,7 @@ export default function configureStore (initialState, __DEBUG__) {
       } else {
         Actions.login();
       }
-    }, 1000);
+    }, 100);
   })
-  /*
-  if (module.hot) {
-    module.hot.accept(() => {
-      const nextRootReducer = require('./modules').default;
-      store.replaceReducer(nextRootReducer);
-    });
-  }
-  */
   return store;
 }
