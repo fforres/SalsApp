@@ -2,7 +2,6 @@ import React, { Component, Dimensions, Image, PropTypes, StyleSheet, Text, View 
 import { Actions } from 'react-native-router-flux';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import Orientation from 'react-native-orientation';
 import Gmap from '../../Map';
 import Schedule from '../../Schedule';
 
@@ -15,12 +14,6 @@ class Talks extends Component {
   };
   constructor(props) {
     super(props);
-  }
-  componentDidMount(){
-    Orientation.lockToPortrait(); //this will lock the view to Portrait
-  }
-  componentWillUnmount(){
-    Orientation.unlockAllOrientations(); //this will lock the view to Portrait
   }
   render() {
     return (
@@ -87,7 +80,7 @@ class Talks extends Component {
           </View>
           <View
               style={styles.tabView}
-              tabLabel="Entradas" 
+              tabLabel="Entradas"
           >
             <Text style={styles.message}>
               Here, there's going to be a place for you to buy tickets.
@@ -100,7 +93,7 @@ class Talks extends Component {
           </View>
           <View
               style={styles.tabView}
-              tabLabel="Horario" 
+              tabLabel="Horario"
           >
             <Schedule {...this.props}/>
           </View>
@@ -111,12 +104,10 @@ class Talks extends Component {
 }
 
 const window = Dimensions.get('window');
-const AVATAR_SIZE = 120;
-const ROW_HEIGHT = 60;
 const PARALLAX_HEADER_HEIGHT = 250;
 const STICKY_HEADER_HEIGHT = 60;
 const TABVIEW_HEIGHT = window.height - (PARALLAX_HEADER_HEIGHT + 50);
-
+let WINDOW_WIDTH =  window.width;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -126,12 +117,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    width: window.width,
+    width: WINDOW_WIDTH,
     height: PARALLAX_HEADER_HEIGHT,
   },
   stickySection: {
+    flex: 1,
     height: STICKY_HEADER_HEIGHT,
-    width: window.width,
     backgroundColor: 'rgba(30,159,117,1)',
     justifyContent: 'center',
     alignItems: 'center',
@@ -165,10 +156,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     paddingTop: 100,
   },
-  avatar: {
-    marginBottom: 10,
-    borderRadius: AVATAR_SIZE / 2,
-  },
   titleText: {
     color: 'white',
     fontSize: 28,
@@ -178,15 +165,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     paddingVertical: 5,
-  },
-  row: {
-    overflow: 'hidden',
-    paddingHorizontal: 10,
-    height: ROW_HEIGHT,
-    backgroundColor: 'white',
-    borderColor: '#ccc',
-    borderBottomWidth: 1,
-    justifyContent: 'center',
   },
   rowText: {
     fontSize: 20,
@@ -240,9 +218,6 @@ const styles = StyleSheet.create({
     bottom:0,
     backgroundColor: 'rgba(120,120,123,1)',
   },
-
-
-
   message: {
     fontSize: 30,
     backgroundColor: 'white',

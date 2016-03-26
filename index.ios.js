@@ -13,7 +13,6 @@ import Entradas from './src/views/Entradas';
 import Login from './src/views/Login';
 import Home from './src/views/Home';
 import Venue from './src/views/Venue';
-import Orientation from 'react-native-orientation';
 
 const __DEBUG__ = true;
 const store = configureStore({}, __DEBUG__);
@@ -33,7 +32,6 @@ const scenes = Actions.create(
 
 class SalsApp extends React.Component {
   componentWillMount(){
-    Orientation.unlockAllOrientations();
   }
   render(){
     return <Router hideNavBar scenes={scenes}/>

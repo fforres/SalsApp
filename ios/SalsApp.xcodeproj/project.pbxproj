@@ -53,8 +53,6 @@
 		B99F94DB1CA46D0900825C44 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		B99F94DC1CA46D0900825C44 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
 		B99F94DD1CA46D0900825C44 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		B9D7B11A1CA4F94D0046ADEB /* Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D7B1191CA4F94D0046ADEB /* Orientation.m */; };
-		B9D7B11B1CA4F94D0046ADEB /* Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D7B1191CA4F94D0046ADEB /* Orientation.m */; };
 		B9F338551CA08D8D00A41F8D /* libRCTFBLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F3384B1CA08D7C00A41F8D /* libRCTFBLogin.a */; };
 		BE6C6716D49A4A0FAD613672 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1B37861C234B1C9B6E9429 /* libAirMaps.a */; };
 		D0A1138EF422487F95DC88B3 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B9E5EFFDBA2D483790E9404E /* MaterialIcons.ttf */; };
@@ -208,8 +206,6 @@
 		B99F94C41CA46B4300825C44 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B99F94C51CA46B4300825C44 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = Frameworks/FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		B99F94C61CA46B4300825C44 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Frameworks/FBSDKShareKit.framework; sourceTree = "<group>"; };
-		B9D7B1181CA4F94D0046ADEB /* Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Orientation.h; sourceTree = "<group>"; };
-		B9D7B1191CA4F94D0046ADEB /* Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Orientation.m; sourceTree = "<group>"; };
 		B9E5EFFDBA2D483790E9404E /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		B9F338451CA08D7C00A41F8D /* RCTFBLogin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTFBLogin.xcodeproj; path = "../node_modules/react-native-facebook-login/RCTFBLogin.xcodeproj"; sourceTree = "<group>"; };
 		BD1B37861C234B1C9B6E9429 /* libAirMaps.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAirMaps.a; sourceTree = "<group>"; };
@@ -392,7 +388,6 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				B9D7B1171CA4F94D0046ADEB /* RCTOrientation */,
 				B9F338451CA08D7C00A41F8D /* RCTFBLogin.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -456,15 +451,6 @@
 				B9D7B10A1CA4CF9E0046ADEB /* libAirMaps.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		B9D7B1171CA4F94D0046ADEB /* RCTOrientation */ = {
-			isa = PBXGroup;
-			children = (
-				B9D7B1181CA4F94D0046ADEB /* Orientation.h */,
-				B9D7B1191CA4F94D0046ADEB /* Orientation.m */,
-			);
-			path = RCTOrientation;
 			sourceTree = "<group>";
 		};
 		B9D7B1421CA5E76A0046ADEB /* Products */ = {
@@ -780,7 +766,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9D7B11B1CA4F94D0046ADEB /* Orientation.m in Sources */,
 				00E356F31AD99517003FC87E /* SalsAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -791,7 +776,6 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				B9D7B11A1CA4F94D0046ADEB /* Orientation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

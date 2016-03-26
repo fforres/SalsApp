@@ -5,12 +5,12 @@ import React, {
   StyleSheet,
   Text,
   View,
+  Easing,
+  Animated,
   TouchableHighlight,
  } from 'react-native';
 import Collapsible from 'react-native-collapsible';
 import _ from 'lodash';
-import Dimensions from 'Dimensions';
-const window = Dimensions.get('window');
 const Icon = require('react-native-vector-icons/FontAwesome');
 
 class Col extends Component {
@@ -33,12 +33,31 @@ class Col extends Component {
   _toggleExpanded() {
     this.setState({collapsed: !this.state.collapsed });
   }
+  _animate() {
+  }
+
   render() {
     const { schedules } = this.props;
+    const caretIcon = ()=>{
+      if(this.state.collapsed){
+        return (<Icon
+            name={'caret-down'}
+            onPress={() => {console.log(this.props);}}
+            style={styles.headerIcon}
+        />)
+      } else {
+        return (<Icon
+            name={'caret-up'}
+            onPress={() => {console.log(this.props);}}
+            style={styles.headerIcon}
+        />)
+      }
+    }
     return (
       <View style={styles.container}>
         <TouchableHighlight onPress={this._toggleExpanded}>
           <View style={styles.header}>
+            {caretIcon()}
             <Text style={styles.headerText}>{_.upperFirst(this.props.day)}</Text>
           </View>
         </TouchableHighlight>
@@ -90,13 +109,26 @@ class Col extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: window.width,
+    left:0,
+    right:0,
     justifyContent: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white',
   },
   header: {
-    backgroundColor: '#F5FCFF',
-    padding: 10,
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    alignItems: 'center',
+    paddingLeft: 13,
+    paddingTop: 15,
+    paddingBottom: 8,
+    borderBottomColor: 'rgba(220,220,220,1)',
+    borderBottomWidth: 1,
+  },
+  headerIcon: {
+    color: 'black',
+    fontSize: 16,
+    paddingRight: 5,
   },
   headerText: {
     textAlign: 'left',
@@ -109,6 +141,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 20,
     backgroundColor:'rgba(230,230,230,0)',
+    borderBottomColor: 'rgba(220,220,220,0.6)',
+    borderBottomWidth: 1,
   },
   horas:{
     flex: 1,

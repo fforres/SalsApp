@@ -14,8 +14,8 @@ const mapStateToProps = (state) => {
 
 class Home extends Component {
   static propTypes = {
-    currentVenueSchedule : PropTypes.object.isRequired,
     currentVenue : PropTypes.object.isRequired,
+    currentVenueSchedule : PropTypes.object.isRequired,
     venueCurrentScheduleSet: PropTypes.func.isRequired,
     venueCurrentScheduleUnset: PropTypes.func.isRequired,
   };
