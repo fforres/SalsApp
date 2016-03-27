@@ -3,10 +3,9 @@ import React, {
   Component,
   PropTypes,
   StyleSheet,
+  ActionSheetIOS,
   Text,
   View,
-  Easing,
-  Animated,
   TouchableHighlight,
  } from 'react-native';
 import Collapsible from 'react-native-collapsible';
@@ -29,28 +28,55 @@ class Col extends Component {
     super();
     this.state = {collapsed: true}
     this._toggleExpanded = this._toggleExpanded.bind(this);
+    this.showActionSheet = this.showActionSheet.bind(this);
   }
   _toggleExpanded() {
     this.setState({collapsed: !this.state.collapsed });
   }
   _animate() {
   }
-
+  showActionSheet() {
+    ActionSheetIOS.showActionSheetWithOptions({
+      options: ['Agregar al Calendario', 'Cancelar'],
+      cancelButtonIndex: 1,
+      destructiveButtonIndex: 2,
+    }, (buttonIndex) => {
+      console.log(buttonIndex);
+    },  (buttonIndex) => {
+      console.log('Error');
+      console.log(buttonIndex);
+    });
+  }
+  showShareActionSheet(el) {
+    console.log(el);
+    ActionSheetIOS.showShareActionSheetWithOptions({
+      message:'Clases de salsa!',
+    }, (buttonIndex) => {
+      console.log(buttonIndex);
+    }, (buttonIndex) => {
+      console.log('error!');
+      console.log(buttonIndex);
+    });
+  }
   render() {
     const { schedules } = this.props;
     const caretIcon = ()=>{
       if(this.state.collapsed){
-        return (<Icon
-            name={'caret-down'}
-            onPress={() => {console.log(this.props);}}
-            style={styles.headerIcon}
-        />)
+        return (
+          <Icon
+              name={'caret-down'}
+              onPress={() => {console.log(this.props);}}
+              style={styles.headerIcon}
+          />
+        )
       } else {
-        return (<Icon
-            name={'caret-up'}
-            onPress={() => {console.log(this.props);}}
-            style={styles.headerIcon}
-        />)
+        return (
+          <Icon
+              name={'caret-up'}
+              onPress={() => {console.log(this.props);}}
+              style={styles.headerIcon}
+          />
+        )
       }
     }
     return (
@@ -66,9 +92,7 @@ class Col extends Component {
             return (
               <View key={i} style={styles.content} >
                 <View style={styles.horas}>
-                  <View
-                      style={styles.iconWrapper}
-                  >
+                  <View style={styles.iconWrapper}>
                     <Icon
                         name={'clock-o'}
                         onPress={() => {console.log(this.props);}}
@@ -76,26 +100,24 @@ class Col extends Component {
                     />
                   </View>
                   <Text style={styles.startTime}>{el.startTime}</Text>
-                  <Text style={styles.endTime}>a {el.endTime}</Text>
+                  <Text style={styles.hourMiddleText}>a</Text>
+                  <Text style={styles.endTime}>{el.endTime}</Text>
                 </View>
                 <View style={styles.descripcion}>
                   <Text style={styles.className}>{_.upperFirst(el.name)}</Text>
                   <Text style={styles.classCode}>{_.upperFirst(el.code)}</Text>
                 </View>
                 <View style={styles.addToCalendar}>
-                  <View
-                      style={styles.iconWrapper}
-                  >
-                    <Icon
-                        name={'calendar'}
-                        onPress={() => {console.log(this.props);}}
-                        style={styles.calendarIcon}
-                    />
-                  </View>
-                  <View style={styles.calendarText}>
-                    <Text style={styles.addText}>Agregar al</Text>
-                    <Text style={styles.addText}>calendario</Text>
-                  </View>
+                  <Icon
+                      name={'ellipsis-h'}
+                      onPress={()=>{this.showActionSheet(el)}}
+                      style={styles.calendarIcon}
+                  />
+                  <Icon
+                      name={'share-square-o'}
+                      onPress={()=>{this.showShareActionSheet(el)}}
+                      style={styles.calendarIcon}
+                  />
                 </View>
               </View>
             )
@@ -139,7 +161,11 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     flexDirection: 'row',
-    padding: 20,
+    alignItems: 'center',
+    paddingTop: 20,
+    paddingBottom: 20,
+    paddingLeft: 5,
+    paddingRight: 5,
     backgroundColor:'rgba(230,230,230,0)',
     borderBottomColor: 'rgba(220,220,220,0.6)',
     borderBottomWidth: 1,
@@ -149,7 +175,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 12,
+    paddingRight: 12,
   },
   iconWrapper: {
     flex: 1,
@@ -160,11 +186,16 @@ const styles = StyleSheet.create({
   },
   icon: {
     color: 'black',
-    fontSize: 28,
+    fontSize: 21,
   },
   startTime: {
     color: 'black',
-    fontSize: 20,
+    fontSize: 17,
+  },
+  hourMiddleText: {
+    color: 'black',
+    padding: 3,
+    fontSize: 12,
   },
   endTime: {
     color: 'black',
@@ -175,7 +206,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'flex-start',
     flexDirection: 'column',
-    padding: 23,
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   className: {
     color: 'black',
@@ -188,26 +220,17 @@ const styles = StyleSheet.create({
   },
   addToCalendar:{
     flex: 1,
-    flexDirection: 'column',
+    alignItems:'center',
+    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
+    padding: 0,
   },
   calendarIcon:{
-    fontSize: 28,
-    paddingBottom: 8,
+    fontSize: 18,
+    color: 'rgba(0,0,0,0.5)',
+    padding: 10,
+    paddingLeft: 12,
   },
-  calendarText: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  addText: {
-    color: 'black',
-    textAlign: 'center',
-    fontSize: 14,
-  },
-
 });
 
 export default Col;
