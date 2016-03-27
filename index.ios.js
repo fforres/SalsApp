@@ -5,6 +5,7 @@
 import React, { AppRegistry } from 'react-native';
 import configureStore from './src/utils/Redux/configureStore';
 import { Actions, Scene, Router } from 'react-native-router-flux';
+import Codepush from './src/utils/CodePush';
 
 import Splash from './src/views/Splash';
 import Menu from './src/views/Menu';
@@ -14,6 +15,7 @@ import Login from './src/views/Login';
 import Home from './src/views/Home';
 import Venue from './src/views/Venue';
 
+Codepush();
 const __DEBUG__ = true;
 const store = configureStore({}, __DEBUG__);
 
