@@ -1,6 +1,7 @@
 package com.salsapp;
 
 import com.facebook.react.ReactActivity;
+import com.microsoft.codepush.react.CodePush;
 import com.github.yamill.orientation.OrientationPackage;
 import com.AirMaps.AirPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -39,6 +40,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new CodePush(),
             new OrientationPackage(),
             new AirPackage(),
             new VectorIconsPackage(),
