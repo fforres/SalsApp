@@ -25,7 +25,7 @@ class Schedule extends Component {
       DAYS[schedule[el].dayCode].hours.push(schedule[el]);
     })
     const Schedules = Object.keys(DAYS).map((el, i) => {
-      return <Col day={DAYS[el].day} key={i} schedules={DAYS[el].hours} />;
+      return <Col address={this.props.address} day={DAYS[el].day} key={i} schedules={DAYS[el].hours} />;
     });
     if(Schedules.length > 0){
       return (

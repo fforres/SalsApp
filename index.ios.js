@@ -21,13 +21,13 @@ const store = configureStore({}, __DEBUG__);
 
 const scenes = Actions.create(
   <Scene hideNavBar key="root" >
-      <Scene component={Splash} initial key="splash" store={store} title="Splash" />
-      <Scene component={Login} key="login" store={store} title="Login" type="replace"/>
-      <Scene component={Home} direction="horizontal" key="home" store={store} title="Locales" type="replace"/>
-      <Scene component={Venue} direction="horizontal" key="venue" store={store} />
-      <Scene component={Entradas} direction="vertical" key="entradas" store={store} />
-      <Scene component={Menu} direction="vertical" key="menu" store={store} />
-      <Scene component={Profile} direction="vertical" key="profile" store={store} />
+    <Scene component={Splash} initial key="splash" store={store} title="Splash" />
+    <Scene component={Login} key="login" store={store} title="Login" type="replace"/>
+    <Scene component={Home} direction="horizontal" key="home" store={store} title="Locales" type="replace"/>
+    <Scene component={Venue} direction="horizontal" key="venue" store={store} />
+    <Scene component={Entradas} direction="vertical" key="entradas" store={store} />
+    <Scene component={Menu} direction="vertical" key="menu" store={store} />
+    <Scene component={Profile} direction="vertical" key="profile" store={store} />
   </Scene>
 );
 ///
