@@ -7,13 +7,18 @@ import React, {
   Text,
   View,
   TouchableHighlight,
+  NativeAppEventEmitter,
  } from 'react-native';
 import Collapsible from 'react-native-collapsible';
 import _ from 'lodash';
+import moment from 'moment';
+import RNCalendarEvents from 'react-native-calendar-events';
+
 const Icon = require('react-native-vector-icons/FontAwesome');
 
 class Col extends Component {
   static propTypes = {
+    address: PropTypes.string.isRequired,
     day: PropTypes.string.isRequired,
     schedules: PropTypes.arrayOf(PropTypes.shape({
       code: PropTypes.string.isRequired,
@@ -24,24 +29,81 @@ class Col extends Component {
       name: PropTypes.string.isRequired,
     })).isRequired,
   }
+  componentWillMount(){
+    console.log(this.props);
+    this.eventEmitter = NativeAppEventEmitter.addListener('eventSaveSuccess', (id) => {
+      console.log(`Evento ${id} agregado`);
+    });
+    this.eventEmitter2 = NativeAppEventEmitter.addListener('eventSaveError', (err) => {
+      console.log(err)
+    });
+  }
+  componentWillUnMount(){
+    this.eventEmitter.remove();
+    this.eventEmitter2.remove();
+  }
   constructor() {
     super();
     this.state = {collapsed: true}
     this._toggleExpanded = this._toggleExpanded.bind(this);
     this.showActionSheet = this.showActionSheet.bind(this);
+    this.addEvent = this.addEvent.bind(this);
   }
   _toggleExpanded() {
-    this.setState({collapsed: !this.state.collapsed });
+    this.setState({collapsed: !this.state.collapsed});
   }
   _animate() {
   }
-  showActionSheet() {
+  addEvent(el){
+    const startTime = el.startTime.split(':');
+    const endTime = el.endTime.split(':');
+    const startDate=  moment().weekday(el.dayCode).hour(startTime[0]).minute(startTime[1]).second(0);
+    const startDateString = startDate.format('YYYY-MM-DDTHH:mm:ss').toString() + '.000-03:00';
+
+    const startDateAlarm1=  startDate.subtract('hours',1)
+    const startDateAlarm1String = startDateAlarm1.format('YYYY-MM-DDTHH:mm:ss').toString() + '.000-03:00';
+
+    const startDateAlarm2=  startDate.subtract('days',1)
+    const startDateAlarm2String = startDateAlarm2.format('YYYY-MM-DDTHH:mm:ss').toString() + '.000-03:00';
+
+    const reminderOb = {
+      location: this.props.address,
+      notes: 'notes',
+      recurrence: 'weekly',
+      startDate: startDateString,
+      endDate: moment().weekday(el.dayCode).hour(endTime[0]).minute(endTime[1]).second(0).format('YYYY-MM-DDTHH:mm:ss').toString() + '.000-03:00',
+      alarms: [{
+        date: startDateAlarm2String
+      },{
+        date: startDateAlarm1String
+      }]
+    };
+    const reminderName = _.upperFirst(el.name) + ' - ' + _.upperFirst(el.code);
+    RNCalendarEvents.saveEvent(reminderName, reminderOb);
+  }
+  showActionSheet(el) {
+    const that = this;
     ActionSheetIOS.showActionSheetWithOptions({
       options: ['Agregar al Calendario', 'Cancelar'],
       cancelButtonIndex: 1,
       destructiveButtonIndex: 2,
     }, (buttonIndex) => {
-      console.log(buttonIndex);
+      // Check reminder permissions
+      if (buttonIndex === 0) {
+        RNCalendarEvents.authorizationStatus(({status}) => {
+          console.log(status);
+          if (status === 'authorized') {
+            that.addEvent(el);
+          } else {
+            RNCalendarEvents.authorizeEventStore((err, auth) => {
+              that.addEvent(el);
+            });
+
+          }
+
+        });
+
+}
     },  (buttonIndex) => {
       console.log('Error');
       console.log(buttonIndex);
@@ -165,7 +227,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 20,
     paddingLeft: 5,
-    paddingRight: 5,
+    paddingRight: 15,
     backgroundColor:'rgba(230,230,230,0)',
     borderBottomColor: 'rgba(220,220,220,0.6)',
     borderBottomWidth: 1,
@@ -228,8 +290,7 @@ const styles = StyleSheet.create({
   calendarIcon:{
     fontSize: 18,
     color: 'rgba(0,0,0,0.5)',
-    padding: 10,
-    paddingLeft: 12,
+    padding: 16,
   },
 });
 
