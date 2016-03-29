@@ -41,7 +41,6 @@ class venueCard extends Component {
                   </Text>
                 </View>
               </TouchableHighlight>
-
             </View>
           </View>
         </View>

@@ -8,12 +8,14 @@ class Schedule extends Component {
     name: PropTypes.string.isRequired,
     profileImage: PropTypes.string.isRequired,
     schedule: PropTypes.object.isRequired,
+    notificationAdd: PropTypes.func.isRequired,
   };
   constructor() {
     super();
   }
   render() {
     const { schedule } = this.props;
+    console.log(this.props);
     const DAYS = [];
     Object.keys(schedule).forEach(function(el){
       if (!DAYS[schedule[el].dayCode]) {
@@ -25,7 +27,7 @@ class Schedule extends Component {
       DAYS[schedule[el].dayCode].hours.push(schedule[el]);
     })
     const Schedules = Object.keys(DAYS).map((el, i) => {
-      return <Col address={this.props.address} day={DAYS[el].day} key={i} schedules={DAYS[el].hours} />;
+      return <Col address={this.props.address} day={DAYS[el].day} key={i} notificationAdd={this.props.notificationAdd} schedules={DAYS[el].hours} />;
     });
     if(Schedules.length > 0){
       return (

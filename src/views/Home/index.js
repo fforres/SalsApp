@@ -6,6 +6,7 @@ import { Actions } from 'react-native-router-flux'
 import StickyHeader from '../../components/NavBar';
 import VenueCard from '../../components/Venue/Card';
 import ref from '../../utils/FireBase';
+
 const mapStateToProps = (state) => {
   return {
     venues : state.venues.venues,
@@ -18,8 +19,8 @@ class Home extends Component {
   static propTypes = {
     venueCurrentSet: PropTypes.func.isRequired,
     venueCurrentUnset: PropTypes.func.isRequired,
-    venuesSet: PropTypes.func.isRequired,
     venues: PropTypes.objectOf(PropTypes.object),
+    venuesSet: PropTypes.func.isRequired,
   };
   constructor() {
     super();
@@ -32,9 +33,7 @@ class Home extends Component {
     venuesRef.once('value', function (data) {
       const venues = data.val();
       venuesSet(venues);
-    }, function (err) {
-
-    })
+    }, function () {})
   }
 
   openProfile(data){
@@ -84,5 +83,5 @@ let styles = StyleSheet.create({
 })
 
 export default connect(mapStateToProps, accountActions)(
-   connect(mapStateToProps, venuesActions)(Home)
- );
+  connect(mapStateToProps, venuesActions)(Home)
+);

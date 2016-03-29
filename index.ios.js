@@ -2,7 +2,7 @@
  * React Native Webpack Starter Kit
  * https://github.com/jhabdas/react-native-webpack-starter-kit
  */
-import React, { AppRegistry } from 'react-native';
+import React, { AppRegistry, View } from 'react-native';
 import configureStore from './src/utils/Redux/configureStore';
 import { Actions, Scene, Router } from 'react-native-router-flux';
 import Codepush from './src/utils/CodePush';
@@ -14,6 +14,7 @@ import Entradas from './src/views/Entradas';
 import Login from './src/views/Login';
 import Home from './src/views/Home';
 import Venue from './src/views/Venue';
+import Notifications from './src/utils/Notifications';
 
 Codepush();
 const __DEBUG__ = true;
@@ -36,7 +37,20 @@ class SalsApp extends React.Component {
   componentWillMount(){
   }
   render(){
-    return <Router hideNavBar scenes={scenes}/>
+    return (
+      <View
+          style={{
+            top:0,
+            left:0,
+            right:0,
+            bottom:0,
+            position: 'absolute',
+          }}
+      >
+        <Router hideNavBar scenes={scenes}/>
+        <Notifications store={store}/>
+      </View>
+    )
   }
 }
 
