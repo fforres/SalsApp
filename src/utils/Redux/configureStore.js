@@ -3,8 +3,9 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import devTools from 'remote-redux-devtools';
 import rootReducer from './modules';
-import { persistStore, autoRehydrate } from 'redux-persist'
-import { Actions } from 'react-native-router-flux'
+import { persistStore, autoRehydrate } from 'redux-persist';
+import { Actions } from 'react-native-router-flux';
+import Auth from '../Auth0';
 
 const persistConfig = {
   storage: AsyncStorage,
@@ -29,9 +30,9 @@ export default function configureStore (initialState, __DEBUG__) {
       if (store.getState().account.loggedIn) {
         Actions.home();
       } else {
-        Actions.login();
+        Auth.logIn(store)
       }
-    }, 100);
+    }, 1000);
   })
   return store;
 }

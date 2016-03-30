@@ -15,7 +15,21 @@
 
 #import "RCTLog.h"
 
+#import <LockReactNative/A0LockReact.h>
+
 @implementation AppDelegate
+
+/*
+  Adding Metods for oauth0
+*/
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+  return [[[A0LockReact sharedInstance] lock] handleURL:url sourceApplication:sourceApplication];
+}
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
+  return [[[A0LockReact sharedInstance] lock] continueUserActivity:userActivity restorationHandler:restorationHandler];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -47,6 +61,11 @@
    */
 
   // jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+
+  /*
+    Adding requirements for oauth0
+  */
+  [[[A0LockReact sharedInstance] lock] applicationLaunchedWithOptions:launchOptions];
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"SalsApp"

@@ -1,0 +1,20 @@
+source 'https://github.com/CocoaPods/Specs.git'
+pod 'React', :subspecs => [
+  'Core',
+  'ART',
+  'RCTActionSheet',
+  'RCTAdSupport',
+  'RCTCameraRoll',
+  'RCTGeolocation',
+  'RCTImage',
+  'RCTNetwork',
+  'RCTPushNotification',
+  'RCTSettings',
+  'RCTText',
+  'RCTVibration',
+  'RCTWebSocket',
+  'RCTLinkingIOS',
+  'RCTTest',
+  ], :path => '../node_modules/react-native'
+pod 'Lock-Facebook', '~> 2.2'
+pod 'LockReactNative', :path => '../node_modules/react-native-lock-ios'

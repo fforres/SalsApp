@@ -10,7 +10,6 @@ import Codepush from './src/utils/CodePush';
 import Splash from './src/views/Splash';
 import Menu from './src/views/Menu';
 import Tickets from './src/views/Tickets';
-import Login from './src/views/Login';
 import Home from './src/views/Home';
 import Venue from './src/views/Venue';
 import Notifications from './src/utils/Notifications';
@@ -20,8 +19,7 @@ const __DEBUG__ = true;
 const store = configureStore({}, __DEBUG__);
 const scenes = Actions.create(
   <Scene hideNavBar key="root" >
-    <Scene component={Splash} initial key="splash" store={store} title="Splash" />
-    <Scene component={Login} key="login" store={store} title="Login" type="replace"/>
+    <Scene component={Splash} initial key="splash" store={store} title="Splash" type="replace" />
     <Scene component={Home} direction="horizontal" key="home" store={store} title="Locales" type="replace"/>
     <Scene component={Venue} direction="horizontal" key="venue" store={store} />
     <Scene component={Tickets} direction="vertical" key="tickets" store={store} />
