@@ -3,25 +3,19 @@ import FBLogin from 'react-native-facebook-login';
 import { FBLoginManager } from 'NativeModules';
 import ref from '../../../utils/FireBase';
 import { Actions } from 'react-native-router-flux';
-import { connect } from 'react-redux';
-import { actions as accountActions } from '../../../utils/Redux/modules/account';
-
-const mapStateToProps = (state) => {
-  return {
-    loggedIn: state.account.loggedIn,
-    userData: state.account.userData,
-  };
-};
 
 class Login extends Component {
   static propTypes = {
     logIn: PropTypes.func.isRequired,
+    logOut: PropTypes.func.isRequired,
   };
   constructor() {
     super();
     this.loginUser = this.loginUser.bind(this);
   }
-  componentDidMount(){}
+  componentDidMount(){
+    console.log(this.props);
+  }
   loginUser(fbInfo, fbAuthData, authData, key){
     this.props.logIn({
       fbAuthData,
@@ -108,6 +102,7 @@ class Login extends Component {
           }}
           onLogout={function(){
             console.log('Logged out.')
+            Actions.splash();
             props.logOut();
           }}
           onPermissionsMissing={function(data){
@@ -121,4 +116,4 @@ class Login extends Component {
   }
 }
 
-export default connect(mapStateToProps, accountActions)(Login)
+export default Login;

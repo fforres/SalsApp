@@ -136,15 +136,16 @@ const styles = StyleSheet.create({
     position: 'absolute',
     flex: 1,
     flexDirection: 'row',
-    bottom: 15,
     alignItems: 'center',
     justifyContent: 'space-between',
+    top:10,
     left: 10,
     right:10,
   },
   fixedSectionText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 26,
+    padding:12,
   },
   fixedSectionTextHighlight: {
     color: 'white',
