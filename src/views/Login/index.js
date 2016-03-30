@@ -3,7 +3,7 @@
  * https://github.com/jhabdas/react-native-webpack-starter-kit
  */
 import React, { PropTypes } from 'react-native';
-import Facebook from '../../components/Auth/Facebook';
+import FBLogin from '../../components/Auth/Facebook';
 import { connect } from 'react-redux';
 import { actions as accountActions } from '../../utils/Redux/modules/account';
 const {
@@ -23,6 +23,9 @@ const mapStateToProps = (state) => {
 class Splash extends React.Component {
   static propTypes = {
     isSideBarOpen: PropTypes.bool.isRequired,
+    logIn: PropTypes.func.isRequired,
+    logOut: PropTypes.func.isRequired,
+    userData: PropTypes.object.isRequired,
     loggedIn: PropTypes.bool.isRequired,
     store: PropTypes.object.isRequired,
   };
@@ -42,7 +45,11 @@ class Splash extends React.Component {
             <Text style={styles.instructions}>
               lorem ipsum dolor sit PARTY!
             </Text>
-            <Facebook store={this.props.store}/>
+            <FBLogin
+                userData={this.props.userData}
+                logIn={this.props.logIn}
+                logOut={this.props.logOut}
+            />
           </View>
         </Image>
       </View>

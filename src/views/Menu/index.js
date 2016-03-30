@@ -2,14 +2,10 @@
  * React Native Webpack Starter Kit
  * https://github.com/jhabdas/react-native-webpack-starter-kit
  */
-import React, { Component } from 'react-native';
+import React, { Component,  StyleSheet, View, PropTypes } from 'react-native';
 import { connect } from 'react-redux';
 import { actions as accountActions } from '../../utils/Redux/modules/account';
-const {
-  StyleSheet,
-  Text,
-  View,
-} = React;
+import UserProfile from '../../components/User/Profile';
 
 const mapStateToProps = (state) => {
   return {
@@ -19,12 +15,19 @@ const mapStateToProps = (state) => {
 };
 
 class Menu extends Component {
+  static propTypes = {
+    logIn: PropTypes.func.isRequired,
+    logOut: PropTypes.func.isRequired,
+    userData: PropTypes.object.isRequired,
+  };
   render(){
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          You will be able to see your Menu here
-        </Text>
+        <UserProfile
+            userData={this.props.userData}
+            logIn={this.props.logIn}
+            logOut={this.props.logOut}
+        />
       </View>
     )
   }

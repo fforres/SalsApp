@@ -36,9 +36,9 @@ let styles = StyleSheet.create({
     marginRight: 0,
   },
   fixedSectionText: {
-    padding: 10,
+    padding: 15,
     color: 'white',
-    fontSize: 20,
+    fontSize: 26,
   },
 })
 

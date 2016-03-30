@@ -33,7 +33,7 @@ class venueCard extends Component {
               <TouchableHighlight
                   onPress={()=>{ this.onPressCard(this.props) }}
                   style={[styles.flatButtonWrapper]}
-                  underlayColor={'rgba(150,150,150,0.4)'}
+                  underlayColor={'rgba(150,150,150,0.3)'}
               >
                 <View style={[styles.flatButton]}>
                   <Text style={[styles.flatButtonText]}>
@@ -91,7 +91,10 @@ let styles = StyleSheet.create({
   flatButton: {
     borderColor: 'rgba(141,164,175,1)',
     borderWidth: 2,
-    padding: 4,
+    paddingLeft: 11,
+    paddingRight: 11,
+    paddingTop: 6,
+    paddingBottom: 6,
   },
   flatButtonText: {
     color: 'white',

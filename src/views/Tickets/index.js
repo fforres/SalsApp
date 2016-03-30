@@ -23,7 +23,7 @@ class Entradas extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          You can buy entradas here
+          You can see your available tickets here
         </Text>
       </View>
     )
@@ -37,6 +37,9 @@ let styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
+  welcome:{
+    fontSize: 24,
+  }
 })
 
 export default connect(mapStateToProps, accountActions)(Entradas);
