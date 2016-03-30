@@ -5,100 +5,50 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
-		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
-		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
-		00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
-		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
-		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* SalsAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SalsAppTests.m */; };
-		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
-		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
-		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; settings = {ATTRIBUTES = (Required, ); }; };
-		220F9E4386354414BED27C2F /* libRNCalendarReminders.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 707C214FAEDB4070955E542A /* libRNCalendarReminders.a */; };
 		2B6DF0F5637243D289DFAB77 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B96FB9D1ABF4D54B86DCBF2 /* Octicons.ttf */; };
 		2B6E5533FD6041EFA3B01ABB /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CB420D08A04473A0B0D43B /* libCodePush.a */; };
 		2D72070C048E4664A478679B /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF282A78DBE6465B9EC51C7E /* libRNVectorIcons.a */; };
 		2E450BF9019C4623829512E1 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D111BA249D4EAC97D8AC5C /* Entypo.ttf */; };
 		717DF7F33C7A46A783894B81 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8028E20628DA407ABC792693 /* Ionicons.ttf */; };
-		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8D5924B8D0D945878AD9F790 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51D135ACABB8498EB0B4A572 /* FontAwesome.ttf */; };
 		8E19901698F943A9A76A40FD /* libRNSpinkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E970A127C0E47D698CE758A /* libRNSpinkit.a */; };
-		93489ED8C1004D1DA833AC70 /* libRNCalendarEvents.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCA32511B4A47BB81FE3F56 /* libRNCalendarEvents.a */; };
 		9BDDC699F86A464A97E94C27 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FE501DEC015437098B0B0E3 /* EvilIcons.ttf */; };
+		9E57E5B1DA34E4F3FBCCAB6A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDB39741FD8BC92AEE5F4D7 /* libPods.a */; };
 		A253344939ED4329968C70A5 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37620B632CB9413EBEF6C09D /* Foundation.ttf */; };
+		B925EF991CAC075E00F4F75A /* libRNCalendarEvents.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B925EF861CAC06A600F4F75A /* libRNCalendarEvents.a */; };
+		B925EFA11CAC075E00F4F75A /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B925EF9A1CAC075E00F4F75A /* libAFNetworking.a */; };
+		B925EFA21CAC075E00F4F75A /* libCocoaLumberjack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B925EF9B1CAC075E00F4F75A /* libCocoaLumberjack.a */; };
+		B925EFA31CAC075E00F4F75A /* libLock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B925EF9C1CAC075E00F4F75A /* libLock.a */; };
+		B925EFA41CAC075E00F4F75A /* libLockReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B925EF9D1CAC075E00F4F75A /* libLockReactNative.a */; };
+		B925EFA51CAC075E00F4F75A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B925EF9E1CAC075E00F4F75A /* libReact.a */; };
+		B925EFA61CAC075E00F4F75A /* libSimpleKeychain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B925EF9F1CAC075E00F4F75A /* libSimpleKeychain.a */; };
+		B925EFA71CAC075E00F4F75A /* libTouchIDAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B925EFA01CAC075E00F4F75A /* libTouchIDAuth.a */; };
+		B925EFB81CAC37E000F4F75A /* libBolts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B925EFB41CAC37E000F4F75A /* libBolts.a */; };
+		B925EFB91CAC37E000F4F75A /* libFBSDKCoreKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B925EFB51CAC37E000F4F75A /* libFBSDKCoreKit.a */; };
+		B925EFBA1CAC37E000F4F75A /* libFBSDKLoginKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B925EFB61CAC37E000F4F75A /* libFBSDKLoginKit.a */; };
+		B925EFBB1CAC37E000F4F75A /* libLock-Facebook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B925EFB71CAC37E000F4F75A /* libLock-Facebook.a */; };
 		B93C9FF01CA83E1B005319DC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B93C9FEF1CA83E1B005319DC /* libz.tbd */; };
 		B93CA0941CA99192005319DC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93CA0931CA99192005319DC /* EventKit.framework */; };
-		B99F94C71CA46B4300825C44 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99F94C11CA46B4300825C44 /* Bolts.framework */; };
 		B99F94C81CA46B4300825C44 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99F94C11CA46B4300825C44 /* Bolts.framework */; };
 		B99F94C91CA46B4300825C44 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99F94C21CA46B4300825C44 /* FBAudienceNetwork.framework */; };
 		B99F94CA1CA46B4300825C44 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99F94C21CA46B4300825C44 /* FBAudienceNetwork.framework */; };
-		B99F94CB1CA46B4300825C44 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99F94C31CA46B4300825C44 /* FBSDKCoreKit.framework */; };
 		B99F94CC1CA46B4300825C44 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99F94C31CA46B4300825C44 /* FBSDKCoreKit.framework */; };
-		B99F94CD1CA46B4300825C44 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99F94C41CA46B4300825C44 /* FBSDKLoginKit.framework */; };
 		B99F94CE1CA46B4300825C44 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99F94C41CA46B4300825C44 /* FBSDKLoginKit.framework */; };
-		B99F94CF1CA46B4300825C44 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99F94C51CA46B4300825C44 /* FBSDKMessengerShareKit.framework */; };
 		B99F94D01CA46B4300825C44 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99F94C51CA46B4300825C44 /* FBSDKMessengerShareKit.framework */; };
-		B99F94D11CA46B4300825C44 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99F94C61CA46B4300825C44 /* FBSDKShareKit.framework */; };
 		B99F94D21CA46B4300825C44 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99F94C61CA46B4300825C44 /* FBSDKShareKit.framework */; };
-		B99F94D31CA46D0900825C44 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
-		B99F94D41CA46D0900825C44 /* libRCTFBLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F3384B1CA08D7C00A41F8D /* libRCTFBLogin.a */; };
-		B99F94D51CA46D0900825C44 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
-		B99F94D61CA46D0900825C44 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
-		B99F94D71CA46D0900825C44 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
-		B99F94D81CA46D0900825C44 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
-		B99F94D91CA46D0900825C44 /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
-		B99F94DA1CA46D0900825C44 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		B99F94DB1CA46D0900825C44 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
-		B99F94DC1CA46D0900825C44 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
-		B99F94DD1CA46D0900825C44 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		B9F338551CA08D8D00A41F8D /* libRCTFBLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F3384B1CA08D7C00A41F8D /* libRCTFBLogin.a */; };
 		BE6C6716D49A4A0FAD613672 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1B37861C234B1C9B6E9429 /* libAirMaps.a */; };
 		D0A1138EF422487F95DC88B3 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B9E5EFFDBA2D483790E9404E /* MaterialIcons.ttf */; };
 		DAA1028747A5453F9DE21004 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5356C8CFDC9B4217B289D869 /* Zocial.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		00C302AB1ABCB8CE00DB3ED1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RCTActionSheet;
-		};
-		00C302B91ABCB90400DB3ED1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RCTGeolocation;
-		};
-		00C302BF1ABCB91800DB3ED1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 58B5115D1A9E6B3D00147676;
-			remoteInfo = RCTImage;
-		};
-		00C302DB1ABCB9D200DB3ED1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 58B511DB1A9E6C8500147676;
-			remoteInfo = RCTNetwork;
-		};
-		00C302E31ABCB9EE00DB3ED1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 832C81801AAF6DEF007FA2F7;
-			remoteInfo = RCTVibration;
-		};
 		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
@@ -106,40 +56,19 @@
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = SalsApp;
 		};
-		139105C01AF99BAD00B5F7CC /* PBXContainerItemProxy */ = {
+		B925EF851CAC06A600F4F75A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */;
+			containerPortal = B925EF811CAC06A600F4F75A /* RNCalendarEvents.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RCTSettings;
+			remoteGlobalIDString = BEC43C6A1C723089001221C6;
+			remoteInfo = RNCalendarEvents;
 		};
-		139FDEF31B06529B00C62182 /* PBXContainerItemProxy */ = {
+		B925EFD81CAC3B8900F4F75A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */;
+			containerPortal = B925EFD41CAC3B8900F4F75A /* RCTFBLogin.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3C86DF461ADF2C930047B81A;
-			remoteInfo = RCTWebSocket;
-		};
-		146834031AC3E56700842450 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
-			remoteInfo = React;
-		};
-		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RCTLinking;
-		};
-		832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
-			remoteInfo = RCTText;
+			remoteGlobalIDString = 4F3A6B5B1ACFBCC500CA65F7;
+			remoteInfo = RCTFBLogin;
 		};
 		B93C9FE01CA83C89005319DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -147,20 +76,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = CodePush;
-		};
-		B93CA0891CA990C7005319DC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1829ABCF724A4A01AED16664 /* RNCalendarEvents.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BEC43C6A1C723089001221C6;
-			remoteInfo = RNCalendarEvents;
-		};
-		B93CA0911CA9910F005319DC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B93CA08D1CA9910F005319DC /* RNCalendarEvents.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BEC43C6A1C723089001221C6;
-			remoteInfo = RNCalendarEvents;
 		};
 		B99F94F71CA48A1900825C44 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -183,27 +98,13 @@
 			remoteGlobalIDString = D42CB3511B2538DE00FD0AE2;
 			remoteInfo = RNSpinkit;
 		};
-		B9F3384A1CA08D7C00A41F8D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9F338451CA08D7C00A41F8D /* RCTFBLogin.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F3A6B5B1ACFBCC500CA65F7;
-			remoteInfo = RCTFBLogin;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
-		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
-		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
-		00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTNetwork.xcodeproj; path = "../node_modules/react-native/Libraries/Network/RCTNetwork.xcodeproj"; sourceTree = "<group>"; };
-		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* SalsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* SalsAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SalsAppTests.m; sourceTree = "<group>"; };
-		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
-		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* SalsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SalsApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = SalsApp/AppDelegate.m; sourceTree = "<group>"; };
@@ -211,26 +112,36 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SalsApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SalsApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SalsApp/main.m; sourceTree = "<group>"; };
-		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		1829ABCF724A4A01AED16664 /* RNCalendarEvents.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNCalendarEvents.xcodeproj; path = "../node_modules/react-native-calendar-events/RNCalendarEvents.xcodeproj"; sourceTree = "<group>"; };
+		198B420E1AFA7453340E8804 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1B96FB9D1ABF4D54B86DCBF2 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		23CB420D08A04473A0B0D43B /* libCodePush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCodePush.a; sourceTree = "<group>"; };
 		37620B632CB9413EBEF6C09D /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		3E970A127C0E47D698CE758A /* libRNSpinkit.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSpinkit.a; sourceTree = "<group>"; };
+		4DDB39741FD8BC92AEE5F4D7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D135ACABB8498EB0B4A572 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		5356C8CFDC9B4217B289D869 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		67D111BA249D4EAC97D8AC5C /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		6FE501DEC015437098B0B0E3 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		707C214FAEDB4070955E542A /* libRNCalendarReminders.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNCalendarReminders.a; sourceTree = "<group>"; };
 		7624DC4F55784B2B8CBFFA98 /* RNSpinkit.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSpinkit.xcodeproj; path = "../node_modules/react-native-spinkit/ios/RNSpinkit.xcodeproj"; sourceTree = "<group>"; };
-		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		8028E20628DA407ABC792693 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		AA35BE1A97324F38AD1E44B6 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		AA67C44578B64AB8814CEE2D /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
+		AD296DABB91D51820969CD97 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		ADD586B59E3F45399D770734 /* AirMaps.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AirMaps.xcodeproj; path = "../node_modules/react-native-maps/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; };
+		B925EF811CAC06A600F4F75A /* RNCalendarEvents.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCalendarEvents.xcodeproj; path = "../node_modules/react-native-calendar-events/RNCalendarEvents.xcodeproj"; sourceTree = "<group>"; };
+		B925EF9A1CAC075E00F4F75A /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "../../../../Library/Developer/Xcode/DerivedData/SalsApp-hgxgtvijlzjnlkfvxkauzxckqgcx/Build/Products/Debug-iphonesimulator/libAFNetworking.a"; sourceTree = "<group>"; };
+		B925EF9B1CAC075E00F4F75A /* libCocoaLumberjack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCocoaLumberjack.a; path = "../../../../Library/Developer/Xcode/DerivedData/SalsApp-hgxgtvijlzjnlkfvxkauzxckqgcx/Build/Products/Debug-iphonesimulator/libCocoaLumberjack.a"; sourceTree = "<group>"; };
+		B925EF9C1CAC075E00F4F75A /* libLock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLock.a; path = "../../../../Library/Developer/Xcode/DerivedData/SalsApp-hgxgtvijlzjnlkfvxkauzxckqgcx/Build/Products/Debug-iphonesimulator/libLock.a"; sourceTree = "<group>"; };
+		B925EF9D1CAC075E00F4F75A /* libLockReactNative.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLockReactNative.a; path = "../../../../Library/Developer/Xcode/DerivedData/SalsApp-hgxgtvijlzjnlkfvxkauzxckqgcx/Build/Products/Debug-iphonesimulator/libLockReactNative.a"; sourceTree = "<group>"; };
+		B925EF9E1CAC075E00F4F75A /* libReact.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReact.a; path = "../../../../Library/Developer/Xcode/DerivedData/SalsApp-hgxgtvijlzjnlkfvxkauzxckqgcx/Build/Products/Debug-iphonesimulator/libReact.a"; sourceTree = "<group>"; };
+		B925EF9F1CAC075E00F4F75A /* libSimpleKeychain.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSimpleKeychain.a; path = "../../../../Library/Developer/Xcode/DerivedData/SalsApp-hgxgtvijlzjnlkfvxkauzxckqgcx/Build/Products/Debug-iphonesimulator/libSimpleKeychain.a"; sourceTree = "<group>"; };
+		B925EFA01CAC075E00F4F75A /* libTouchIDAuth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTouchIDAuth.a; path = "../../../../Library/Developer/Xcode/DerivedData/SalsApp-hgxgtvijlzjnlkfvxkauzxckqgcx/Build/Products/Debug-iphonesimulator/libTouchIDAuth.a"; sourceTree = "<group>"; };
+		B925EFB41CAC37E000F4F75A /* libBolts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBolts.a; path = "../../../../Library/Developer/Xcode/DerivedData/SalsApp-hgxgtvijlzjnlkfvxkauzxckqgcx/Build/Products/Debug-iphonesimulator/libBolts.a"; sourceTree = "<group>"; };
+		B925EFB51CAC37E000F4F75A /* libFBSDKCoreKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFBSDKCoreKit.a; path = "../../../../Library/Developer/Xcode/DerivedData/SalsApp-hgxgtvijlzjnlkfvxkauzxckqgcx/Build/Products/Debug-iphonesimulator/libFBSDKCoreKit.a"; sourceTree = "<group>"; };
+		B925EFB61CAC37E000F4F75A /* libFBSDKLoginKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFBSDKLoginKit.a; path = "../../../../Library/Developer/Xcode/DerivedData/SalsApp-hgxgtvijlzjnlkfvxkauzxckqgcx/Build/Products/Debug-iphonesimulator/libFBSDKLoginKit.a"; sourceTree = "<group>"; };
+		B925EFB71CAC37E000F4F75A /* libLock-Facebook.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libLock-Facebook.a"; path = "../../../../Library/Developer/Xcode/DerivedData/SalsApp-hgxgtvijlzjnlkfvxkauzxckqgcx/Build/Products/Debug-iphonesimulator/libLock-Facebook.a"; sourceTree = "<group>"; };
+		B925EFD41CAC3B8900F4F75A /* RCTFBLogin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = RCTFBLogin.xcodeproj; sourceTree = "<group>"; };
 		B93C9FEF1CA83E1B005319DC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		B93CA08D1CA9910F005319DC /* RNCalendarEvents.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCalendarEvents.xcodeproj; path = "../node_modules/react-native-calendar-events/RNCalendarEvents.xcodeproj"; sourceTree = "<group>"; };
 		B93CA0931CA99192005319DC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		B99F94C11CA46B4300825C44 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		B99F94C21CA46B4300825C44 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAudienceNetwork.framework; path = Frameworks/FBAudienceNetwork.framework; sourceTree = "<group>"; };
@@ -239,9 +150,7 @@
 		B99F94C51CA46B4300825C44 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = Frameworks/FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		B99F94C61CA46B4300825C44 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Frameworks/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		B9E5EFFDBA2D483790E9404E /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		B9F338451CA08D7C00A41F8D /* RCTFBLogin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTFBLogin.xcodeproj; path = "../node_modules/react-native-facebook-login/RCTFBLogin.xcodeproj"; sourceTree = "<group>"; };
 		BD1B37861C234B1C9B6E9429 /* libAirMaps.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAirMaps.a; sourceTree = "<group>"; };
-		DDCA32511B4A47BB81FE3F56 /* libRNCalendarEvents.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNCalendarEvents.a; sourceTree = "<group>"; };
 		DF282A78DBE6465B9EC51C7E /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,17 +159,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B99F94D31CA46D0900825C44 /* libRCTActionSheet.a in Frameworks */,
-				B99F94D41CA46D0900825C44 /* libRCTFBLogin.a in Frameworks */,
-				B99F94D51CA46D0900825C44 /* libRCTGeolocation.a in Frameworks */,
-				B99F94D61CA46D0900825C44 /* libRCTImage.a in Frameworks */,
-				B99F94D71CA46D0900825C44 /* libRCTLinking.a in Frameworks */,
-				B99F94D81CA46D0900825C44 /* libRCTNetwork.a in Frameworks */,
-				B99F94D91CA46D0900825C44 /* libRCTSettings.a in Frameworks */,
-				B99F94DA1CA46D0900825C44 /* libRCTText.a in Frameworks */,
-				B99F94DB1CA46D0900825C44 /* libRCTVibration.a in Frameworks */,
-				B99F94DC1CA46D0900825C44 /* libRCTWebSocket.a in Frameworks */,
-				B99F94DD1CA46D0900825C44 /* libReact.a in Frameworks */,
 				B99F94C81CA46B4300825C44 /* Bolts.framework in Frameworks */,
 				B99F94CC1CA46B4300825C44 /* FBSDKCoreKit.framework in Frameworks */,
 				B99F94D21CA46B4300825C44 /* FBSDKShareKit.framework in Frameworks */,
@@ -274,77 +172,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B925EFB81CAC37E000F4F75A /* libBolts.a in Frameworks */,
+				B925EFB91CAC37E000F4F75A /* libFBSDKCoreKit.a in Frameworks */,
+				B925EFBA1CAC37E000F4F75A /* libFBSDKLoginKit.a in Frameworks */,
+				B925EFBB1CAC37E000F4F75A /* libLock-Facebook.a in Frameworks */,
+				B925EFA11CAC075E00F4F75A /* libAFNetworking.a in Frameworks */,
+				B925EFA21CAC075E00F4F75A /* libCocoaLumberjack.a in Frameworks */,
+				B925EFA31CAC075E00F4F75A /* libLock.a in Frameworks */,
+				B925EFA41CAC075E00F4F75A /* libLockReactNative.a in Frameworks */,
+				B925EFA51CAC075E00F4F75A /* libReact.a in Frameworks */,
+				B925EFA61CAC075E00F4F75A /* libSimpleKeychain.a in Frameworks */,
+				B925EFA71CAC075E00F4F75A /* libTouchIDAuth.a in Frameworks */,
+				B925EF991CAC075E00F4F75A /* libRNCalendarEvents.a in Frameworks */,
 				B93CA0941CA99192005319DC /* EventKit.framework in Frameworks */,
 				B93C9FF01CA83E1B005319DC /* libz.tbd in Frameworks */,
-				B9F338551CA08D8D00A41F8D /* libRCTFBLogin.a in Frameworks */,
-				146834051AC3E58100842450 /* libReact.a in Frameworks */,
-				B99F94D11CA46B4300825C44 /* FBSDKShareKit.framework in Frameworks */,
-				B99F94CD1CA46B4300825C44 /* FBSDKLoginKit.framework in Frameworks */,
-				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
-				B99F94CF1CA46B4300825C44 /* FBSDKMessengerShareKit.framework in Frameworks */,
-				B99F94C71CA46B4300825C44 /* Bolts.framework in Frameworks */,
-				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
-				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
-				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
-				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
-				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
-				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
-				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
-				B99F94CB1CA46B4300825C44 /* FBSDKCoreKit.framework in Frameworks */,
-				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				B99F94C91CA46B4300825C44 /* FBAudienceNetwork.framework in Frameworks */,
 				2D72070C048E4664A478679B /* libRNVectorIcons.a in Frameworks */,
 				BE6C6716D49A4A0FAD613672 /* libAirMaps.a in Frameworks */,
 				8E19901698F943A9A76A40FD /* libRNSpinkit.a in Frameworks */,
 				2B6E5533FD6041EFA3B01ABB /* libCodePush.a in Frameworks */,
-				220F9E4386354414BED27C2F /* libRNCalendarReminders.a in Frameworks */,
-				93489ED8C1004D1DA833AC70 /* libRNCalendarEvents.a in Frameworks */,
+				9E57E5B1DA34E4F3FBCCAB6A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00C302A81ABCB8CE00DB3ED1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		00C302B61ABCB90400DB3ED1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		00C302BC1ABCB91800DB3ED1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				00C302C01ABCB91800DB3ED1 /* libRCTImage.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		00C302D41ABCB9D200DB3ED1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		00C302E01ABCB9EE00DB3ED1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		00E356EF1AD99517003FC87E /* SalsAppTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,22 +215,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		139105B71AF99BAD00B5F7CC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				139105C11AF99BAD00B5F7CC /* libRCTSettings.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		139FDEE71B06529A00C62182 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				139FDEF41B06529B00C62182 /* libRCTWebSocket.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* SalsApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,12 +229,13 @@
 			name = SalsApp;
 			sourceTree = "<group>";
 		};
-		146834001AC3E56700842450 /* Products */ = {
+		351472D3F05671A4E75A56C7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				146834041AC3E56700842450 /* libReact.a */,
+				198B420E1AFA7453340E8804 /* Pods.debug.xcconfig */,
+				AD296DABB91D51820969CD97 /* Pods.release.xcconfig */,
 			);
-			name = Products;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		681F95BB05C6496EB254F203 /* Resources */ = {
@@ -415,44 +253,17 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		78C398B11ACF4ADC00677621 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				78C398B91ACF4ADC00677621 /* libRCTLinking.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				B93CA08D1CA9910F005319DC /* RNCalendarEvents.xcodeproj */,
-				B9F338451CA08D7C00A41F8D /* RCTFBLogin.xcodeproj */,
-				146833FF1AC3E56700842450 /* React.xcodeproj */,
-				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
-				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
-				00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */,
-				78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */,
-				00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */,
-				139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */,
-				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
-				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
-				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+				B925EFD41CAC3B8900F4F75A /* RCTFBLogin.xcodeproj */,
+				B925EF811CAC06A600F4F75A /* RNCalendarEvents.xcodeproj */,
 				AA35BE1A97324F38AD1E44B6 /* RNVectorIcons.xcodeproj */,
 				ADD586B59E3F45399D770734 /* AirMaps.xcodeproj */,
 				7624DC4F55784B2B8CBFFA98 /* RNSpinkit.xcodeproj */,
 				AA67C44578B64AB8814CEE2D /* CodePush.xcodeproj */,
-				1829ABCF724A4A01AED16664 /* RNCalendarEvents.xcodeproj */,
 			);
 			name = Libraries;
-			sourceTree = "<group>";
-		};
-		832341B11AAA6A8300B99B32 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				832341B51AAA6A8300B99B32 /* libRCTText.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		83CBB9F61A601CBA00E9B192 = {
@@ -464,6 +275,7 @@
 				00E356EF1AD99517003FC87E /* SalsAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				681F95BB05C6496EB254F203 /* Resources */,
+				351472D3F05671A4E75A56C7 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -478,26 +290,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B925EF821CAC06A600F4F75A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B925EF861CAC06A600F4F75A /* libRNCalendarEvents.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B925EFD51CAC3B8900F4F75A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B925EFD91CAC3B8900F4F75A /* libRCTFBLogin.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B93C9FDC1CA83C89005319DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				B93C9FE11CA83C89005319DC /* libCodePush.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B93CA0791CA990C7005319DC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B93CA08A1CA990C7005319DC /* libRNCalendarEvents.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B93CA08E1CA9910F005319DC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B93CA0921CA9910F005319DC /* libRNCalendarEvents.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -526,17 +338,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B9F338461CA08D7C00A41F8D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B9F3384B1CA08D7C00A41F8D /* libRCTFBLogin.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		B9F338571CA092C700A41F8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B925EFB41CAC37E000F4F75A /* libBolts.a */,
+				B925EFB51CAC37E000F4F75A /* libFBSDKCoreKit.a */,
+				B925EFB61CAC37E000F4F75A /* libFBSDKLoginKit.a */,
+				B925EFB71CAC37E000F4F75A /* libLock-Facebook.a */,
+				B925EF9A1CAC075E00F4F75A /* libAFNetworking.a */,
+				B925EF9B1CAC075E00F4F75A /* libCocoaLumberjack.a */,
+				B925EF9C1CAC075E00F4F75A /* libLock.a */,
+				B925EF9D1CAC075E00F4F75A /* libLockReactNative.a */,
+				B925EF9E1CAC075E00F4F75A /* libReact.a */,
+				B925EF9F1CAC075E00F4F75A /* libSimpleKeychain.a */,
+				B925EFA01CAC075E00F4F75A /* libTouchIDAuth.a */,
 				B93CA0931CA99192005319DC /* EventKit.framework */,
 				B93C9FEF1CA83E1B005319DC /* libz.tbd */,
 				B99F94C11CA46B4300825C44 /* Bolts.framework */,
@@ -545,6 +360,7 @@
 				B99F94C41CA46B4300825C44 /* FBSDKLoginKit.framework */,
 				B99F94C51CA46B4300825C44 /* FBSDKMessengerShareKit.framework */,
 				B99F94C61CA46B4300825C44 /* FBSDKShareKit.framework */,
+				4DDB39741FD8BC92AEE5F4D7 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -574,10 +390,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SalsApp" */;
 			buildPhases = (
+				281AED586C133E7474F6DD8C /* Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				F4011678AB2009B6DA380316 /* Embed Pods Frameworks */,
+				D0CBCF2F7ABBE487C7B8A887 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -627,56 +446,12 @@
 					ProjectRef = AA67C44578B64AB8814CEE2D /* CodePush.xcodeproj */;
 				},
 				{
-					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
-					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
+					ProductGroup = B925EFD51CAC3B8900F4F75A /* Products */;
+					ProjectRef = B925EFD41CAC3B8900F4F75A /* RCTFBLogin.xcodeproj */;
 				},
 				{
-					ProductGroup = B9F338461CA08D7C00A41F8D /* Products */;
-					ProjectRef = B9F338451CA08D7C00A41F8D /* RCTFBLogin.xcodeproj */;
-				},
-				{
-					ProductGroup = 00C302B61ABCB90400DB3ED1 /* Products */;
-					ProjectRef = 00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */;
-				},
-				{
-					ProductGroup = 00C302BC1ABCB91800DB3ED1 /* Products */;
-					ProjectRef = 00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */;
-				},
-				{
-					ProductGroup = 78C398B11ACF4ADC00677621 /* Products */;
-					ProjectRef = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
-				},
-				{
-					ProductGroup = 00C302D41ABCB9D200DB3ED1 /* Products */;
-					ProjectRef = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
-				},
-				{
-					ProductGroup = 139105B71AF99BAD00B5F7CC /* Products */;
-					ProjectRef = 139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */;
-				},
-				{
-					ProductGroup = 832341B11AAA6A8300B99B32 /* Products */;
-					ProjectRef = 832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */;
-				},
-				{
-					ProductGroup = 00C302E01ABCB9EE00DB3ED1 /* Products */;
-					ProjectRef = 00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */;
-				},
-				{
-					ProductGroup = 139FDEE71B06529A00C62182 /* Products */;
-					ProjectRef = 139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */;
-				},
-				{
-					ProductGroup = 146834001AC3E56700842450 /* Products */;
-					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-				},
-				{
-					ProductGroup = B93CA08E1CA9910F005319DC /* Products */;
-					ProjectRef = B93CA08D1CA9910F005319DC /* RNCalendarEvents.xcodeproj */;
-				},
-				{
-					ProductGroup = B93CA0791CA990C7005319DC /* Products */;
-					ProjectRef = 1829ABCF724A4A01AED16664 /* RNCalendarEvents.xcodeproj */;
+					ProductGroup = B925EF821CAC06A600F4F75A /* Products */;
+					ProjectRef = B925EF811CAC06A600F4F75A /* RNCalendarEvents.xcodeproj */;
 				},
 				{
 					ProductGroup = B9D7B1421CA5E76A0046ADEB /* Products */;
@@ -696,74 +471,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */ = {
+		B925EF861CAC06A600F4F75A /* libRNCalendarEvents.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libRCTActionSheet.a;
-			remoteRef = 00C302AB1ABCB8CE00DB3ED1 /* PBXContainerItemProxy */;
+			path = libRNCalendarEvents.a;
+			remoteRef = B925EF851CAC06A600F4F75A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */ = {
+		B925EFD91CAC3B8900F4F75A /* libRCTFBLogin.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libRCTGeolocation.a;
-			remoteRef = 00C302B91ABCB90400DB3ED1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		00C302C01ABCB91800DB3ED1 /* libRCTImage.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTImage.a;
-			remoteRef = 00C302BF1ABCB91800DB3ED1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTNetwork.a;
-			remoteRef = 00C302DB1ABCB9D200DB3ED1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTVibration.a;
-			remoteRef = 00C302E31ABCB9EE00DB3ED1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		139105C11AF99BAD00B5F7CC /* libRCTSettings.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTSettings.a;
-			remoteRef = 139105C01AF99BAD00B5F7CC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		139FDEF41B06529B00C62182 /* libRCTWebSocket.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTWebSocket.a;
-			remoteRef = 139FDEF31B06529B00C62182 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		146834041AC3E56700842450 /* libReact.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libReact.a;
-			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTLinking.a;
-			remoteRef = 78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		832341B51AAA6A8300B99B32 /* libRCTText.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTText.a;
-			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
+			path = libRCTFBLogin.a;
+			remoteRef = B925EFD81CAC3B8900F4F75A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		B93C9FE11CA83C89005319DC /* libCodePush.a */ = {
@@ -771,20 +490,6 @@
 			fileType = archive.ar;
 			path = libCodePush.a;
 			remoteRef = B93C9FE01CA83C89005319DC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B93CA08A1CA990C7005319DC /* libRNCalendarEvents.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNCalendarEvents.a;
-			remoteRef = B93CA0891CA990C7005319DC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B93CA0921CA9910F005319DC /* libRNCalendarEvents.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNCalendarEvents.a;
-			remoteRef = B93CA0911CA9910F005319DC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		B99F94F81CA48A1900825C44 /* libRNVectorIcons.a */ = {
@@ -806,13 +511,6 @@
 			fileType = archive.ar;
 			path = libRNSpinkit.a;
 			remoteRef = B9D7B1511CA5E76A0046ADEB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B9F3384B1CA08D7C00A41F8D /* libRCTFBLogin.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTFBLogin.a;
-			remoteRef = B9F3384A1CA08D7C00A41F8D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -858,6 +556,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
+		};
+		281AED586C133E7474F6DD8C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D0CBCF2F7ABBE487C7B8A887 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4011678AB2009B6DA380316 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -959,6 +702,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 198B420E1AFA7453340E8804 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -970,7 +714,7 @@
 				);
 				INFOPLIST_FILE = SalsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
 				PRODUCT_NAME = SalsApp;
 				PROVISIONING_PROFILE = "";
@@ -979,6 +723,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD296DABB91D51820969CD97 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -990,7 +735,7 @@
 				);
 				INFOPLIST_FILE = SalsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
 				PRODUCT_NAME = SalsApp;
 				PROVISIONING_PROFILE = "";
@@ -1050,6 +795,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
 				SDKROOT = iphoneos;
 			};
@@ -1101,6 +847,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

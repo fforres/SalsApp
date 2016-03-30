@@ -1,0 +1,150 @@
+PODS:
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
+    - AFNetworking/NSURLSession
+  - Bolts (1.6.0):
+    - Bolts/AppLinks (= 1.6.0)
+    - Bolts/Tasks (= 1.6.0)
+  - Bolts/AppLinks (1.6.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.6.0)
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
+  - FBSDKCoreKit (4.10.1):
+    - Bolts (~> 1.5)
+  - FBSDKLoginKit (4.10.1):
+    - FBSDKCoreKit
+  - Lock (1.23.1):
+    - CocoaLumberjack (~> 2.0)
+    - Lock/Core (= 1.23.1)
+    - Lock/UI (= 1.23.1)
+    - Lock/WebView (= 1.23.1)
+  - Lock-Facebook (2.2.1):
+    - CocoaLumberjack (~> 2.0)
+    - FBSDKCoreKit (~> 4.6)
+    - FBSDKLoginKit (~> 4.6)
+    - Lock/Core (~> 1.11)
+  - Lock/Core (1.23.1):
+    - AFNetworking (~> 3.0)
+    - CocoaLumberjack (~> 2.0)
+  - Lock/CoreUI (1.23.1):
+    - CocoaLumberjack (~> 2.0)
+    - Lock/Core
+  - Lock/Email (1.23.1):
+    - CocoaLumberjack (~> 2.0)
+    - Lock/UI
+  - Lock/SMS (1.23.1):
+    - CocoaLumberjack (~> 2.0)
+    - Lock/UI
+  - Lock/TouchID (1.23.1):
+    - CocoaLumberjack (~> 2.0)
+    - Lock/UI
+    - SimpleKeychain (~> 0.2)
+    - TouchIDAuth (~> 0.1)
+  - Lock/UI (1.23.1):
+    - CocoaLumberjack (~> 2.0)
+    - Lock/CoreUI
+  - Lock/WebView (1.23.1):
+    - CocoaLumberjack (~> 2.0)
+    - Lock/CoreUI
+  - LockReactNative (0.0.5):
+    - LockReactNative/Core (= 0.0.5)
+    - LockReactNative/NativeModule (= 0.0.5)
+  - LockReactNative/Core (0.0.5):
+    - Lock (~> 1.21)
+    - Lock/Email
+    - Lock/SMS
+    - Lock/TouchID
+  - LockReactNative/NativeModule (0.0.5):
+    - LockReactNative/Core
+    - React/Core
+  - React/ART (0.22.0-rc):
+    - React/Core
+  - React/Core (0.22.0-rc)
+  - React/RCTActionSheet (0.22.0-rc):
+    - React/Core
+  - React/RCTAdSupport (0.22.0-rc):
+    - React/Core
+  - React/RCTCameraRoll (0.22.0-rc):
+    - React/Core
+  - React/RCTGeolocation (0.22.0-rc):
+    - React/Core
+  - React/RCTImage (0.22.0-rc):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTLinkingIOS (0.22.0-rc):
+    - React/Core
+  - React/RCTNetwork (0.22.0-rc):
+    - React/Core
+  - React/RCTPushNotification (0.22.0-rc):
+    - React/Core
+  - React/RCTSettings (0.22.0-rc):
+    - React/Core
+  - React/RCTTest (0.22.0-rc)
+  - React/RCTText (0.22.0-rc):
+    - React/Core
+  - React/RCTVibration (0.22.0-rc):
+    - React/Core
+  - React/RCTWebSocket (0.22.0-rc):
+    - React/Core
+  - SimpleKeychain (0.7.0)
+  - TouchIDAuth (0.2.0):
+    - SimpleKeychain (~> 0.3)
+
+DEPENDENCIES:
+  - Lock-Facebook (~> 2.2)
+  - LockReactNative (from `../node_modules/react-native-lock-ios`)
+  - React/ART (from `../node_modules/react-native`)
+  - React/Core (from `../node_modules/react-native`)
+  - React/RCTActionSheet (from `../node_modules/react-native`)
+  - React/RCTAdSupport (from `../node_modules/react-native`)
+  - React/RCTCameraRoll (from `../node_modules/react-native`)
+  - React/RCTGeolocation (from `../node_modules/react-native`)
+  - React/RCTImage (from `../node_modules/react-native`)
+  - React/RCTLinkingIOS (from `../node_modules/react-native`)
+  - React/RCTNetwork (from `../node_modules/react-native`)
+  - React/RCTPushNotification (from `../node_modules/react-native`)
+  - React/RCTSettings (from `../node_modules/react-native`)
+  - React/RCTTest (from `../node_modules/react-native`)
+  - React/RCTText (from `../node_modules/react-native`)
+  - React/RCTVibration (from `../node_modules/react-native`)
+  - React/RCTWebSocket (from `../node_modules/react-native`)
+
+EXTERNAL SOURCES:
+  LockReactNative:
+    :path: ../node_modules/react-native-lock-ios
+  React:
+    :path: ../node_modules/react-native
+
+SPEC CHECKSUMS:
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  Bolts: f52a250053bb517ca874523c3913776359ab3def
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
+  FBSDKCoreKit: d2aaed5e9ab7d8d6301c533376a1fbff1cf3deb5
+  FBSDKLoginKit: 699ff169080e3072de4b9b0faca90bf23dc36deb
+  Lock: 746fa9e46a1ff147a3736867c32e8697cd9af6d5
+  Lock-Facebook: 09f2397cbc9ae2e1fc654f7e66248da30343e349
+  LockReactNative: 117b5d116792fba7f8b9d04e6b274b4080852c44
+  React: 82925955bd45df2901ae7faaa8c3b65a16d31a30
+  SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
+  TouchIDAuth: 0cf861f58a2cacfc1c12cb02de4850729d943c81
+
+COCOAPODS: 0.39.0

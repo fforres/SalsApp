@@ -2,16 +2,12 @@
  * React Native Webpack Starter Kit
  * https://github.com/jhabdas/react-native-webpack-starter-kit
  */
-import React, { PropTypes } from 'react-native';
+import React, { PropTypes, TouchableHighlight, StyleSheet, Text, View, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { actions as accountActions } from '../../utils/Redux/modules/account';
+import Auth from '../../utils/Auth0';
+
 // import ref from '../../utils/FireBase';
-const {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-} = React;
 
 const mapStateToProps = (state) => {
   return {
@@ -49,7 +45,6 @@ class Splash extends React.Component {
     ref.child('venues_schedules/-KDZkzkEUCWP7KVwFgrB/' + newRef.key()).set(true);
     ref.child('venues_schedules/-KDZkzkEUCWP7KVwFgrB/' + newRef2.key()).set(true);
     */
-
   }
   render(){
     return (
@@ -62,9 +57,15 @@ class Splash extends React.Component {
             <Text style={styles.welcome}>
               SalsApp!
             </Text>
-            <Text style={styles.instructions}>
-              Loading!...
-            </Text>
+            <TouchableHighlight
+                onPress={Auth.logIn}
+                style={styles.menuLink}
+                underlayColor={'rgba(150,150,150,0.3)'}
+            >
+              <Text style={styles.instructions}>
+                Ingresar
+              </Text>
+            </TouchableHighlight>
           </View>
         </Image>
       </View>
@@ -103,7 +104,7 @@ let styles = StyleSheet.create({
     margin: 10,
   },
   instructions: {
-    fontSize: 15,
+    fontSize: 25,
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,

@@ -1,7 +1,6 @@
 import React, { Component, PropTypes, StyleSheet, View, Text, Image, TouchableHighlight, Dimensions } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 const Screen = Dimensions.get('window');
-import FBLogin from '../../Auth/Facebook';
 
 class Profile extends Component {
   static propTypes = {
@@ -11,26 +10,27 @@ class Profile extends Component {
   };
   constructor() {
     super();
-    this.logOut = this.logOut.bind(this);
+    this.logOutMyAccount = this.logOutMyAccount.bind(this);
     this.myTickets = this.myTickets.bind(this);
   }
-  logOut(){
-    Actions.login();
+  logOutMyAccount(){
+    this.props.logOut();
+    Actions.splash();
   }
   myTickets(){
     Actions.tickets();
   }
   render() {
     const { userData } = this.props;
-    const menuData = userData.authData[userData.authData.auth.provider];
     return (
       <View style={styles.container}>
         <Image
-            source={{uri: menuData.profileImageURL}}
+            source={{uri: userData.profile.image}}
             style={styles.profileImage}
         />
         <View style={styles.regards}>
-          <Text style={styles.regardsText}>Hola {menuData.cachedUserProfile.first_name}!</Text>
+          <Text style={styles.regardsText}>Hola:</Text>
+          <Text style={styles.regardsSubText}>{userData.profile.data.first_name}!</Text>
         </View>
         <Text style={styles.question}>¿Qué quieres hacer?</Text>
         <View style={styles.hr}></View>
@@ -42,18 +42,13 @@ class Profile extends Component {
           <Text style={styles.menuLinkText}>Ver mis tickets</Text>
         </TouchableHighlight>
         <View style={styles.hr}></View>
-        <View
-            onPress={this.logOut}
+        <TouchableHighlight
+            onPress={this.logOutMyAccount}
             style={styles.menuLink}
             underlayColor={'rgba(150,150,150,0.3)'}
         >
           <Text style={styles.menuLinkTextFacebook}>Desconectar mi Cuenta</Text>
-          <FBLogin
-              userData={this.props.userData}
-              logIn={this.props.logIn}
-              logOut={this.props.logOut}
-          />
-        </View>
+        </TouchableHighlight>
         <View style={styles.hr}></View>
       </View>
     );
@@ -76,7 +71,10 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
   },
   regardsText:{
-    fontSize: 20
+    fontSize: 18
+  },
+  regardsSubText:{
+    fontSize: 12
   },
   question:{
     fontSize: 14,
