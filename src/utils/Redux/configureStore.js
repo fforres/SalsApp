@@ -9,6 +9,7 @@ import { Actions } from 'react-native-router-flux'
 const persistConfig = {
   storage: AsyncStorage,
   skipRestore: false,
+  blackList: ['notifications'],
 }
 export default function configureStore (initialState, __DEBUG__) {
   let enhancer;
@@ -24,8 +25,6 @@ export default function configureStore (initialState, __DEBUG__) {
     enhancer
   );
   persistStore(store, persistConfig,  () => {
-    console.log('ReHydrating')
-    console.log(store.getState().account);
     setTimeout(function () {
       if (store.getState().account.loggedIn) {
         Actions.home();

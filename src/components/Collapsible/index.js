@@ -20,6 +20,7 @@ class Col extends Component {
   static propTypes = {
     address: PropTypes.string.isRequired,
     day: PropTypes.string.isRequired,
+    notificationAdd: PropTypes.func.isRequired,
     schedules: PropTypes.arrayOf(PropTypes.shape({
       code: PropTypes.string.isRequired,
       day: PropTypes.string.isRequired,
@@ -60,10 +61,10 @@ class Col extends Component {
     const startDate=  moment().weekday(el.dayCode).hour(startTime[0]).minute(startTime[1]).second(0);
     const startDateString = startDate.format('YYYY-MM-DDTHH:mm:ss').toString() + '.000-03:00';
 
-    const startDateAlarm1=  startDate.subtract('hours',1)
+    const startDateAlarm1=  startDate.subtract(1,'hours')
     const startDateAlarm1String = startDateAlarm1.format('YYYY-MM-DDTHH:mm:ss').toString() + '.000-03:00';
 
-    const startDateAlarm2=  startDate.subtract('days',1)
+    const startDateAlarm2=  startDate.subtract(1,'days')
     const startDateAlarm2String = startDateAlarm2.format('YYYY-MM-DDTHH:mm:ss').toString() + '.000-03:00';
 
     const reminderOb = {
@@ -80,6 +81,7 @@ class Col extends Component {
     };
     const reminderName = _.upperFirst(el.name) + ' - ' + _.upperFirst(el.code);
     RNCalendarEvents.saveEvent(reminderName, reminderOb);
+    this.props.notificationAdd('Recordatorio agregado')
   }
   showActionSheet(el) {
     const that = this;
@@ -98,12 +100,9 @@ class Col extends Component {
             RNCalendarEvents.authorizeEventStore((err, auth) => {
               that.addEvent(el);
             });
-
           }
-
         });
-
-}
+      }
     },  (buttonIndex) => {
       console.log('Error');
       console.log(buttonIndex);

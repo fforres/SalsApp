@@ -2,9 +2,10 @@
  * React Native Webpack Starter Kit
  * https://github.com/jhabdas/react-native-webpack-starter-kit
  */
-import React, { Component } from 'react-native';
+import React, { Component, } from 'react-native';
 import { connect } from 'react-redux';
 import { actions as accountActions } from '../../utils/Redux/modules/account';
+
 const {
   StyleSheet,
   Text,
@@ -18,7 +19,10 @@ const mapStateToProps = (state) => {
   };
 };
 
+
 class Profile extends Component {
+  static propTypes = {
+  }
   render(){
     return (
       <View style={styles.container}>

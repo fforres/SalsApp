@@ -2,6 +2,7 @@ import React, { Component, StyleSheet, PropTypes, View } from 'react-native';
 import { connect } from 'react-redux';
 import { actions as accountActions } from '../../utils/Redux/modules/account';
 import { actions as venuesActions } from '../../utils/Redux/modules/venues';
+import { actions as notificationActions } from '../../utils/Redux/modules/notifications';
 import Carousel from '../../components/Venue/Carousel';
 import ref from '../../utils/FireBase';
 const mapStateToProps = (state) => {
@@ -16,6 +17,7 @@ class Home extends Component {
   static propTypes = {
     currentVenue : PropTypes.object.isRequired,
     currentVenueSchedule : PropTypes.object.isRequired,
+    notificationAdd: PropTypes.func.isRequired,
     venueCurrentScheduleSet: PropTypes.func.isRequired,
     venueCurrentScheduleUnset: PropTypes.func.isRequired,
   };
@@ -35,6 +37,7 @@ class Home extends Component {
       <View style={styles.container}>
         <Carousel
             {...this.props.currentVenue}
+            notificationAdd={this.props.notificationAdd}
             photos={[]}
             schedule={this.props.currentVenueSchedule}
         />
@@ -53,5 +56,7 @@ let styles = StyleSheet.create({
 
 
 export default connect(mapStateToProps, accountActions)(
-   connect(mapStateToProps, venuesActions)(Home)
+   connect(mapStateToProps, venuesActions)(
+     connect(mapStateToProps, notificationActions)(Home)
+   )
  );
