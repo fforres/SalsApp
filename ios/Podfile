@@ -1,4 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
+xcodeproj './SalsApp.xcodeproj'
 pod 'React', :subspecs => [
   'Core',
   'ART',
